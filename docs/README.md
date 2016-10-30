@@ -1,10 +1,11 @@
 # Huluballoo
 
-[Heroku (currently main site)][heroku]
+Live at [huluballoo.stream][custom-domain] or [huluballoo.herokuapp.com][heroku]
 
 [Trello][trello]
 
-[heroku]: http://www.herokuapp.com/
+[custom-domain]: http://www.huluballoo.stream
+[heroku]: https://huluballoo.herokuapp.com
 [trello]: https://trello.com/b/n9X3yAEd/huluballoo
 
 ## Minimum Viable Product
