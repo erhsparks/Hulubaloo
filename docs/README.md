@@ -9,20 +9,20 @@
 
 ## Minimum Viable Product
 
-Huluballoo is a full stack web application which adds a social aspect to Hulu's
-video streaming. It is built using Ruby on Rails and React/Redux.
+Huluballoo is a full stack web application which adds social features to Hulu's video streaming by integrating live commenting during video streaming sessions. It is built using Ruby on Rails and React/Redux.
 
-By the end of Week 9, this app will, at a minimum, satisfy the following criteria
-with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
+Minimum viable product will include the following:
 
 - [ ] Hosting on Heroku
 - [ ] Sign up, log in, log out, guest/demo login
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
+- [ ] .
+- [ ] .
+- [ ] .
+- [ ] .
+- [ ] .
 - [ ] Production README
+
+Each feature will be considered complete when it is appropriately styled using CSS, includes adequate seed data, and can be seamlessly and intuitively navigated by an end user.
 
 ## Design Docs
 * [View Wireframes][wireframes]
@@ -57,11 +57,11 @@ with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 
 ### Phase 5: Cool thing (? days)
 
-**objective:** Do a thing.
+**Objective:** Do a thing.
 
 ### Phase 6: Super cool feature (? days)
 
-**objective:** Add feature.
+**Objective:** Add feature.
 
 ### Bonus Features (as time permits)
 - [ ] Bonus #1
