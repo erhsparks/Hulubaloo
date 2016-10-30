@@ -49,3 +49,8 @@ group :development do
   gem 'annotate'
 end
 
+group :production do
+  # Heroku
+  gem 'rails_12factor'
+  gem 'newrelic_rpm'
+end
