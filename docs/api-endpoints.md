@@ -11,7 +11,7 @@
 ### Users
 
 - `POST /api/users` - Sign up new user
-- `GET /api/user/:id/showings/`
+- `GET /api/user/:id/movie_nights/`
 
 ### Session
 
@@ -26,9 +26,9 @@
 
 ### Showings
 
-- `GET /api/showings/:id`
-- `POST /api/showings/`
-- `PATCH /api/showings/:id`
+- `GET /api/movie_nights/:id`
+- `POST /api/movie_nights/`
+- `PATCH /api/movie_nights/:id`
   - Host may edit showing info only until showing begins
 
 ### Comments
