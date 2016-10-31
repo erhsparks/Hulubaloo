@@ -14,14 +14,18 @@ Huluballoo is a full stack web application which adds social features to Hulu's 
 
 Minimum viable product will include the following:
 
-- [ ] Hosting on Heroku
 - [ ] Sign up, log in, log out, guest/demo login
-- [ ] .
-- [ ] .
-- [ ] .
-- [ ] .
-- [ ] .
 - [ ] Production README
+- [ ] Hosting on Heroku
+- [ ] Videos: organized by category
+- [ ] Showings: group video viewings (user sees as "Movie Nights")
+- [ ] Commenting on Showings
+- [ ] Nested Commenting expands the above feature
+
+Bonus Features include:
+
+- [ ] Live Comments I: Top-level comments tied to video time stamps: on replay, comments and their children won't appear until playback reaches timestamp at which comment was left
+- [ ] Live Comments II: Clicking a top-level comment will jump video playback to point in video at which comment was left
 
 Each feature will be considered complete when it is appropriately styled using CSS, includes adequate seed data, and can be seamlessly and intuitively navigated by an end user.
 
@@ -40,30 +44,32 @@ Each feature will be considered complete when it is appropriately styled using C
 
 ## Implementation Timeline
 
-### Phase 1: Authentication: Sign up, Log in, Log out (2 days)
+### Phase 1: Authentication: Sign up, Log in, Log out (1 days)
 
 **Objective:** Visitors to site can create a new account, and then log in and out. Appropriate errors are displayed for invalid user input. Auth is handled by a Redux cycle which makes AJAX calls to the database after getting user input via a React form component.
 
-### Phase 2: Feature 2 (? days)
+### Phase 2: Videos (3 days)
 
-**Objective:** Thing 2 can be thinged.
+**Objective:** Videos are displayed on the home page, organized in rows corresponding to the video's category. Clicking a video will take user to a watch page where they can view that video.
 
-### Phase 3: Stuff, wow (? days)
+### Phase 3: Showings (2 days)
 
-**Objective:** Yup.
+**Objective:** Users may host showings of videos, known as Movie Nights: new Movie Night form will include selection of video to watch, date and time to watch it, and users to add as viewers. View page will look like regular video view but with an additional comments container to the right of the video player. Movie Night host may edit the showing until showing begins.
 
-### Phase 4: Feature 4 (? days)
+### Phase 4: Top-level Commenting (2 days)
 
-**Objective:** Objective of thing 4.
+**Objective:** Comments will be active from five minutes before showing start to five minutes after showing end. New comment form will be above comments, and comments will display from most recent at the top to oldest at the bottom. Comments container will match video playback container in size, with a scroll feature to access older comments. Comment author may delete own comments, and Movie Night host may delete any comments.
 
-### Phase 5: Cool thing (? days)
+### Phase 5: Nested Commenting (2 days)
 
-**Objective:** Do a thing.
+**Objective:** Comments can be commented on! Nested comments will remain active after showing ends, to keep the discussion going after the show is over!
 
-### Phase 6: Super cool feature (? days)
+## Bonus Features (as time permits)
 
-**Objective:** Add feature.
+### Phase 6: Live Comments I: playback (2 days)
 
-### Bonus Features (as time permits)
-- [ ] Bonus #1
-- [ ] Bonus #2
+**Objective:** On rewatch, comments and their children reappear as playback progresses past the time at which the parent comment was originally left.
+
+### Phase 7: Live Comments II: jump to time of comment (2 days)
+
+**Objective:** Clicking a top-level (parent-less) comment jumps video playback to that comment's creation time, so you can relive the context of that comment as you join the discussion!
