@@ -19,13 +19,12 @@ Minimum viable product will include the following:
 - [ ] Hosting on Heroku
 - [ ] Videos: organized by category
 - [ ] Movie Nights: group video screenings
-- [ ] Commenting on Movie Nights
-- [ ] Nested Commenting expands the above feature
+- [ ] Commenting on Movie Nights, with nested comments
+- [ ] Live Comments I: Top-level comments tied to video playback
+  - On replay, comments and their children will reappear as playback reaches timestamp at which comment was left.
 
 Bonus Features include:
 
-- [ ] Live Comments I: Top-level comments tied to video playback
-  - On replay, comments and their children will reappear as playback reaches timestamp at which comment was left.
 - [ ] Live Comments II: Video playback tied to top-level comments
   - Clicking a top-level comment will jump video playback to point in video at which comment was left.
 
@@ -58,20 +57,18 @@ Each feature will be considered complete when its CSS styling feels like that of
 
 **Objective:** Users may host screenings of videos, known as Movie Nights: new Movie Night form will include selection of video to watch, date and time to watch it, and users to add as viewers. View page will look like regular video view but with an additional comments container to the right of the video player. Host may edit the movie night details until screening begins.
 
-### Phase 4: Top-level Commenting (2 days)
+### Phase 4: Commenting: top-level and nested (2 days)
 
-**Objective:** Comments will be active from five minutes before video start to five minutes after video end. New comment form will be above comments, and comments will display from most recent at the top to oldest at the bottom. Comments container will match video playback container in size, with a scroll feature to access older comments. Comment author may delete own comments, and Movie Night host may delete any comments.
+**Objective:** Top-level comments will be active from five minutes before video start to five minutes after video end. New comment form will be above comments, and comments will display from most recent at the top to oldest at the bottom. Comments container will match video playback container in size, with a scroll feature to access older comments. Comment author may delete own comments, and Movie Night host may delete any comments.
 
-### Phase 5: Nested Commenting (2 days)
+Comments can be commented on! Nested comments will remain active after screening ends, to keep the discussion going after the show is over!
 
-**Objective:** Comments can be commented on! Nested comments will remain active after screening ends, to keep the discussion going after the show is over!
-
-### Bonus Phases!
-
-### Phase 6: Live Comments I: playback (2 days)
+### Phase 5: Live Comments I: playback (2 days)
 
 **Objective:** On rewatch, comments and their children reappear as playback progresses past the time at which the parent comment was originally left.
 
-### Phase 7: Live Comments II: jump to time of comment (2 days)
+### Bonus Phases!
+
+### Phase 6: Live Comments II: jump to time of comment (2 days)
 
 **Objective:** Clicking a top-level (parent-less) comment jumps video playback to that comment's creation time, so you can relive the context of that comment as you join the discussion!
