@@ -12,12 +12,12 @@
  - Footer
 
 **HomeContainer**
- - JoinHuluballooContainer if logged out
+ - JoinHulubalooContainer if logged out
  - HighlightedVideosSplash
  - Renders CategoriesContainer
 
-**JoinHuluballooContainer**
- - JoinHuluballooDetail
+**JoinHulubalooContainer**
+ - JoinHulubalooDetail
  - GuestDemoButton
  - SignUpButton
   - Renders SessionFormContainer

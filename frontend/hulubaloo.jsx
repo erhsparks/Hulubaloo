@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   ReactDOM.render(
     <h1>
-      Welcome to Huluballoo!
+      Welcome to Hulubaloo!
     </h1>,
     root
   );

@@ -1,16 +1,16 @@
-# Huluballoo
+# Hulubaloo
 
-Live at [huluballoo.stream][custom-domain] or [huluballoo.herokuapp.com][heroku]
+Live at [hulubaloo.stream][custom-domain] or [hulubaloo.herokuapp.com][heroku]
 
 [Trello][trello]
 
-[custom-domain]: http://www.huluballoo.stream
-[heroku]: https://huluballoo.herokuapp.com
-[trello]: https://trello.com/b/n9X3yAEd/huluballoo
+[custom-domain]: http://www.hulubaloo.stream
+[heroku]: https://hulubaloo.herokuapp.com
+[trello]: https://trello.com/b/n9X3yAEd/hulubaloo
 
 ## Minimum Viable Product
 
-Huluballoo is a full stack web application which adds social features to Hulu's video streaming by integrating live commenting during video streaming sessions. It is built using Ruby on Rails and React/Redux.
+Hulubaloo is a full stack web application which adds social features to Hulu's video streaming by integrating live commenting during video streaming sessions. It is built using Ruby on Rails and React/Redux.
 
 Minimum viable product will include the following:
 
