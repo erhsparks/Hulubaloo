@@ -16,11 +16,23 @@ column name       | data type | details
 id                | integer   | not null, primary key
 title             | string    | not null, indexed
 description       | text      | not null
-category          | string    | not null, indexed
 video_url         | string    | not null
 preview_image_url | string    | not null
 created_at        | datetime  |
 updated_at        | datetime  |
+
+## video_categories
+column name       | data type | details
+------------------|-----------|-----------------------
+id                | integer   | not null, primary key
+name              | string    | not null, indexed
+
+## video_categorizings
+column name       | data type | details
+------------------|-----------|-----------------------
+id                | integer   | not null, primary key
+video_id          | integer   | not null, indexed, foreign key references videos, unique with category_id
+category_id       | integer   | not null, indexed, foreign key references video_categories
 
 ## movie_nights
 column name | data type | details
