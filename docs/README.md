@@ -18,8 +18,8 @@ Minimum viable product will include the following:
 - [ ] Production README
 - [ ] Hosting on Heroku
 - [ ] Videos: organized by category
-- [ ] Showings: group video viewings (user sees as "Movie Nights")
-- [ ] Commenting on Showings
+- [ ] Movie Nights: group video screenings
+- [ ] Commenting on Movie Nights
 - [ ] Nested Commenting expands the above feature
 
 Bonus Features include:
@@ -52,17 +52,17 @@ Each feature will be considered complete when it is appropriately styled using C
 
 **Objective:** Videos are displayed on the home page, organized in rows corresponding to the video's category. Clicking a video will take user to a watch page where they can view that video.
 
-### Phase 3: Showings (2 days)
+### Phase 3: Movie Nights (2 days)
 
-**Objective:** Users may host showings of videos, known as Movie Nights: new Movie Night form will include selection of video to watch, date and time to watch it, and users to add as viewers. View page will look like regular video view but with an additional comments container to the right of the video player. Movie Night host may edit the showing until showing begins.
+**Objective:** Users may host screenings of videos, known as Movie Nights: new Movie Night form will include selection of video to watch, date and time to watch it, and users to add as viewers. View page will look like regular video view but with an additional comments container to the right of the video player. Host may edit the movie night details until screening begins.
 
 ### Phase 4: Top-level Commenting (2 days)
 
-**Objective:** Comments will be active from five minutes before showing start to five minutes after showing end. New comment form will be above comments, and comments will display from most recent at the top to oldest at the bottom. Comments container will match video playback container in size, with a scroll feature to access older comments. Comment author may delete own comments, and Movie Night host may delete any comments.
+**Objective:** Comments will be active from five minutes before video start to five minutes after video end. New comment form will be above comments, and comments will display from most recent at the top to oldest at the bottom. Comments container will match video playback container in size, with a scroll feature to access older comments. Comment author may delete own comments, and Movie Night host may delete any comments.
 
 ### Phase 5: Nested Commenting (2 days)
 
-**Objective:** Comments can be commented on! Nested comments will remain active after showing ends, to keep the discussion going after the show is over!
+**Objective:** Comments can be commented on! Nested comments will remain active after screening ends, to keep the discussion going after the show is over!
 
 ## Bonus Features (as time permits)
 
