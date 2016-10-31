@@ -24,17 +24,19 @@ Minimum viable product will include the following:
 
 Bonus Features include:
 
-- [ ] Live Comments I: Top-level comments tied to video time stamps: on replay, comments and their children won't appear until playback reaches timestamp at which comment was left
-- [ ] Live Comments II: Clicking a top-level comment will jump video playback to point in video at which comment was left
+- [ ] Live Comments I: Top-level comments tied to video playback
+  - On replay, comments and their children will reappear as playback reaches timestamp at which comment was left.
+- [ ] Live Comments II: Video playback tied to top-level comments
+  - Clicking a top-level comment will jump video playback to point in video at which comment was left.
 
-Each feature will be considered complete when it is appropriately styled using CSS, includes adequate seed data, and can be seamlessly and intuitively navigated by an end user.
+Each feature will be considered complete when its CSS styling feels like that of Hulu's, it includes plenty of seed data, and it can be seamlessly and intuitively navigated by an end user.
 
 ## Design Docs
-* [View Wireframes][wireframes]
+* [Wireframes for Views][wireframes]
 * [React Components][components]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-* [Sample State][sample-state]
+* [API Endpoints][api-endpoints]
+* [Database Schema][schema]
+* [Example Redux State][sample-state]
 
 [wireframes]: wireframes
 [components]: component-hierarchy.md
@@ -64,7 +66,7 @@ Each feature will be considered complete when it is appropriately styled using C
 
 **Objective:** Comments can be commented on! Nested comments will remain active after screening ends, to keep the discussion going after the show is over!
 
-## Bonus Features (as time permits)
+### Bonus Phases!
 
 ### Phase 6: Live Comments I: playback (2 days)
 
