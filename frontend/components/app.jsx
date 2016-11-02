@@ -7,9 +7,9 @@ const App = ({ children }) => (
     <Header />
 
     {children}
-    <div className='placeholder-masthead'></div>
-    <div className='placeholder-body'></div>
-    <nav className='placeholder-categories'></nav>
+    <div className='masthead'></div>
+    <div className='featured-videos'></div>
+    <nav className='video-categories'></nav>
 
     <Footer />
   </div>
