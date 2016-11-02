@@ -1,0 +1,24 @@
+.masthead {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 367px;
+  background: #292929;
+}
+
+.masthead a {
+  background: #66AA33;
+  color: #FFFFFF;
+  font-size: 14px;
+  display: flex;
+  border-radius: 2px;
+  margin-left: 8%;
+  margin-top: 28%;
+  /*min-width: 100px;*/
+  justify-content: center;
+  padding: 6px 22px;
+}
+
+/*.masthead a:first-of-type {
+  margin-left: 10%;
+}*/

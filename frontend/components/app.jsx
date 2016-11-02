@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './header/header';
+import Masthead from './masthead';
 import Footer from './footer';
 
 const App = ({ children }) => (
@@ -7,7 +8,7 @@ const App = ({ children }) => (
     <Header />
 
     {children}
-    <div className='masthead'></div>
+    <Masthead />
     <div className='featured-videos'></div>
     <nav className='video-categories'></nav>
 

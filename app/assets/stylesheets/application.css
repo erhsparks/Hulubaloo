@@ -17,5 +17,8 @@
 
 a:hover {
   cursor: pointer;
+}
+
+a:not(.fake-button):hover {
   color: #66AA33;
 }

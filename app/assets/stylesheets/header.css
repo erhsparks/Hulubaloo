@@ -42,10 +42,11 @@ header {
 }
 
 .user-dropdown > a {
-  padding: 6px 0px 9px;
+  padding: 6px 0px 8px;
 }
 
 .user-dropdown-items {
+  font-size: 13px;
   visibility: hidden;
   display: flex;
   flex-direction: column;
@@ -60,6 +61,7 @@ header {
 
 .user-dropdown-items > li {
   margin: auto;
+  justify-content: center;
 }
 
 .user-dropdown:hover {
