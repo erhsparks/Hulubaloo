@@ -1,17 +1,19 @@
 import React from 'react';
 import Header from './header/header';
-import Masthead from './masthead';
+import Masthead from './masthead/masthead';
 import Footer from './footer';
 
 const App = ({ children }) => (
-  <div className='hulubaloo-main'>
+  <div className='hulubaloo-home'>
     <Header />
 
     {children}
-    <Masthead />
-    <div className='featured-videos'></div>
-    <nav className='video-categories'></nav>
-
+    <div className='hulubaloo-home-content'>
+      <Masthead />
+      <div className='featured-videos'></div>
+      <nav className='video-categories'></nav>
+    </div>
+    
     <Footer />
   </div>
 );
