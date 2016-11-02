@@ -1,5 +1,6 @@
 header {
-  background-color: RGBa(0, 0, 0, 0.85);
+  background: linear-gradient(RGBa(0, 0, 0, 0.45), transparent);
+  /*background-color: RGBa(0, 0, 0, 0.85); for when scroll is below masthead*/
   width: 100%;
   height: 60px;
   font-size: 15px;

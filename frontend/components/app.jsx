@@ -8,8 +8,10 @@ const App = ({ children }) => {
     <Header />
 
     {children}
-    <div className='placeholder'></div>
-    
+    <div className='placeholder-masthead'></div>
+    <div className='placeholder-body'></div>
+    <nav className='placeholder-categories'></nav>
+
     <Footer />
   </div>
 );};

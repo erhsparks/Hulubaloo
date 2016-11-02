@@ -38,8 +38,27 @@ nav {
   justify-content: space-between;
 }
 
-.placeholder {
+.placeholder-masthead {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 367px;
+  background: #292929;
+}
+
+.placeholder-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-height: 300px;
-  border: 1px solid #D6D6D6;
+}
+
+.placeholder-categories {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 164px;
+  background: #FFFFFF;
+  border-top: 1px solid #D6D6D6;
+  border-bottom: 1px solid #D6D6D6;
 }
