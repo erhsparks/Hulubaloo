@@ -2,8 +2,7 @@ import React from 'react';
 import Header from './header/header';
 import Footer from './footer';
 
-const App = ({ children }) => {
-  return (
+const App = ({ children }) => (
   <div className='hulubaloo-main'>
     <Header />
 
@@ -14,6 +13,6 @@ const App = ({ children }) => {
 
     <Footer />
   </div>
-);};
+);
 
 export default App;
