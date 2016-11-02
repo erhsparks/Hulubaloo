@@ -4,8 +4,9 @@ header {
   font-size: 15px;
   font-weight: normal;
 
-  display: block;
+  display: flex;
   position: fixed;
+  align-items: center;
 }
 
 .on-masthead {
@@ -30,11 +31,45 @@ header {
 
 .user-menu > li {
   margin-left: 25px;
-  display: flex;
   height: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.user-dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-dropdown > a {
+  padding: 6px 0px 9px;
+}
+
+.user-dropdown-items {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+  min-height: 35px;
+  color: #aaaaaa;
+  border: 1px solid #444444;
+  border-radius: 5px;
+  background: RGBa(0, 0, 0, 0.85);
+}
+
+.user-dropdown-items > li {
+  margin: auto;
+}
+
+.user-dropdown:hover {
+  color: #66AA33;
+}
+
+.user-dropdown:hover .user-dropdown-items {
+  visibility: visible;
 }
 
 .user-menu a {
   display: inline-block;
-  align-self: center;
 }

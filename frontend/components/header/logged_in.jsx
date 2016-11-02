@@ -1,9 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router';
 
-export default () => (
-  <ul className='user-menu logged-in'>
-    <li><Link to='/signup'>SIGN UP NOW</Link></li>
-    <li><Link to='/login'>LOG IN</Link></li>
+export default ({ currentUser, logout }) => (
+  <ul className='user-menu'>
+    <li className='user-dropdown'>
+      <a>{currentUser.username.toUpperCase()}</a>
+
+      <ul className='user-dropdown-items'>
+        <li><a onClick={() => logout()}>Log Out</a></li>
+      </ul>
+    </li>
   </ul>
 );

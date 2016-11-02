@@ -1,13 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router';
 
-export default ({ currentUser, logout }) => {
-  const handleLogout = e => logout();
-
-  return (
-    <ul className='user-menu logged-out'>
-      <li><a>{currentUser.username.toUpperCase()}</a></li>
-
-      <li><a onClick={handleLogout}>LOG OUT</a></li>
-    </ul>
-  );
-};
+export default () => (
+  <ul className='user-menu'>
+    <li><Link to='/signup'>SIGN UP NOW</Link></li>
+    <li><Link to='/login'>LOG IN</Link></li>
+  </ul>
+);
