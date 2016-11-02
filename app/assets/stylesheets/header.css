@@ -13,7 +13,7 @@ header {
 }
 
 .off-masthead {
-  background-color: RGBa(0, 0, 0, 0.85); for when scroll is below masthead
+  background-color: RGBa(0, 0, 0, 0.85);
 }
 
 .header-nav {
