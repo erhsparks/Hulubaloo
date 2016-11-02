@@ -1,11 +1,12 @@
 import React from 'react';
+import Logo from './logo';
 import HeaderLoginLinksContainer from './header_login_links_container';
 
 export default () => (
   <header>
-    <img src='/assets/logo.png'
-      alt='hulubaloo logo'
-      style={{width: 118, height: 18}} />
-    <HeaderLoginLinksContainer />
+    <nav className='header-nav page-width'>
+      <Logo />
+      <HeaderLoginLinksContainer />
+    </nav>
   </header>
 );

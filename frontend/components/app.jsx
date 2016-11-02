@@ -6,7 +6,10 @@ const App = ({ children }) => {
   return (
   <div className='hulubaloo-main'>
     <Header />
+
     {children}
+    <div className='placeholder'></div>
+    
     <Footer />
   </div>
 );};
