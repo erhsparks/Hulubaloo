@@ -1,44 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import checkForLogin from './bootstrap_user';
 import configureStore from './store/store';
 import Root from './components/root';
+import toggleHeaderBkg from './header_scroll_handler';
 
 document.addEventListener('DOMContentLoaded', () => {
-  let store;
-  if (window.currentUser) {
-    const preloadedState = {
-      session: {
-        currentUser: window.currentUser
-      }
-    };
-    store = configureStore(preloadedState);
-  } else store = configureStore();
+  const preloadedState = checkForLogin();
+  const store = configureStore(preloadedState);
 
   const root = document.getElementById('root');
 
   ReactDOM.render(<Root store={store} />, root);
-
-  const toggleHeaderBkg = () => {
-    let header = document.getElementsByTagName('header')[0];
-    let mastheadBottom = 307;
-
-    let onMasthead = 'on-masthead';
-    let offMasthead = 'off-masthead';
-
-    let onClass;
-    let offClass;
-
-    if (document.body.scrollTop <= mastheadBottom) {
-      onClass = onMasthead;
-      offClass = offMasthead;
-    } else {
-      onClass = offMasthead;
-      offClass = onMasthead;
-    }
-
-    header.classList.add(onClass);
-    header.classList.remove(offClass);
-  };
 
   window.onscroll = () => toggleHeaderBkg();
 });
