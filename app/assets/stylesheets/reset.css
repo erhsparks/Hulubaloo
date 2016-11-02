@@ -1,0 +1,45 @@
+body, main, header, footer, nav,
+div, img, p, a, ul, li, h1 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background-color: transparent;
+  font-family: sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+main, header, footer,
+div, img, p, a, ul, li {
+  max-width: 1600px;
+}
+
+.page-width {
+  width: 96%;
+  max-width: 1426px;
+}
+
+body {
+  background-color: #E2E2E2;
+}
+
+main {
+  margin: 0 auto;
+  background-color: #F1F1F1;
+}
+
+nav {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.placeholder {
+  display: flex;
+  min-height: 300px;
+  border: 1px solid #D6D6D6;
+}
