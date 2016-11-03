@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 import SessionForm from './session_form';
 import { login, signup } from '../../actions/session_actions';
 
-const mapStateToProps = state => ({
-  loggedIn: state.session.currentUser ? true : false,
-  errors: state.session.errors
+const mapStateToProps = ({ session }) => ({
+  loggedIn: session.currentUser ? true : false,
+  errors: session.errors
 });
 
 const mapDispatchToProps = (dispatch, { formType }) => {
