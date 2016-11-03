@@ -13,6 +13,7 @@ class SessionForm extends React.Component {
     this.formType = this.props.formType;
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.isGuest = this.isGuest.bind(this);
   }
 
   componentDidUpdate() {
@@ -61,28 +62,37 @@ class SessionForm extends React.Component {
     );
   }
 
+  isGuest () {
+    return this.props.formType.includes('Guest');
+  }
+
   render () {
     return (
       <div className='session-form-container'>
-        <h1>
-          {this.props.formType}
-        </h1>
+        <h1>{this.props.formType}</h1>
 
         <form className='session-form'>
-          <div className='user-inputs'>
-            <label>Username
-              <input
+          <div className='user-input-fields'>
+            <div className='user-input-labels'>
+              <label htmlFor='username'>Username</label>
+              <label htmlFor='password'>Password</label>
+            </div>
+
+            <div className='user-inputs'>
+              <input id='username'
                 type='text'
                 value={this.state.username}
+                className={`${this.isGuest() ? 'guest-form' : ''}`}
+                disabled={this.isGuest() ? true : false}
                 onChange={this.updateParam('username')} />
-            </label>
 
-            <label>Password
-              <input
+              <input id='password'
                 type='password'
                 value={this.state.password}
+                className={`${this.isGuest() ? 'guest-form' : ''}`}
+                disabled={this.isGuest() ? true : false}
                 onChange={this.updateParam('password')} />
-            </label>
+            </div>
           </div>
 
           <a type='submit'
