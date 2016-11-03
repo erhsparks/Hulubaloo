@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161101184023) do
+ActiveRecord::Schema.define(version: 20161103210824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,5 +26,35 @@ ActiveRecord::Schema.define(version: 20161101184023) do
 
   add_index "users", ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
+
+  create_table "video_categories", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "video_categories", ["name"], name: "index_video_categories_on_name", unique: true, using: :btree
+
+  create_table "video_categorizings", force: :cascade do |t|
+    t.integer  "video_id",    null: false
+    t.integer  "category_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "video_categorizings", ["category_id"], name: "index_video_categorizings_on_category_id", using: :btree
+  add_index "video_categorizings", ["video_id", "category_id"], name: "index_video_categorizings_on_video_id_and_category_id", unique: true, using: :btree
+
+  create_table "videos", force: :cascade do |t|
+    t.string   "title",             null: false
+    t.text     "description",       null: false
+    t.string   "video_url",         null: false
+    t.string   "preview_image_url", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "videos", ["title"], name: "index_videos_on_title", using: :btree
+  add_index "videos", ["video_url"], name: "index_videos_on_video_url", unique: true, using: :btree
 
 end

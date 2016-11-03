@@ -16,7 +16,7 @@ column name       | data type | details
 id                | integer   | not null, primary key
 title             | string    | not null, indexed
 description       | text      | not null
-video_url         | string    | not null
+video_url         | string    | not null, unique
 preview_image_url | string    | not null
 created_at        | datetime  |
 updated_at        | datetime  |
@@ -25,7 +25,7 @@ updated_at        | datetime  |
 column name       | data type | details
 ------------------|-----------|-----------------------
 id                | integer   | not null, primary key
-name              | string    | not null, indexed
+name              | string    | not null, indexed, unique
 
 ## video_categorizings
 column name       | data type | details
