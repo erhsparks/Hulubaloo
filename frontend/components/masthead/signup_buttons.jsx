@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router';
-import SessionModal from '../session/session_modal';
+import SessionModalContainer from '../session/session_modal_container';
 
 const SignupButtons = ({ currentUser }) => {
   if (!currentUser) {
     return (
       <div className='masthead-buttons'>
-        <SessionModal displayText={'Guest Demo'}
+        <SessionModalContainer displayText={'Guest Demo'}
           formType={'Guest Log In'}
           displayType={'button'} />
 
-        <SessionModal displayText={'Join Hulubaloo'}
+        <SessionModalContainer displayText={'Join Hulubaloo'}
           formType={'Sign Up'}
           displayType={'button'} />
       </div>
