@@ -1,6 +1,8 @@
 const toggleHeaderBkg = () => {
   let header = document.getElementsByTagName('header')[0];
-  let mastheadBottom = 307;
+  let masthead = document.getElementsByClassName('masthead')[0];
+  let headerBottom = header.offsetHeight;
+  let mastheadBottom = masthead.offsetHeight;
 
   let onMasthead = 'on-masthead';
   let offMasthead = 'off-masthead';
@@ -8,7 +10,7 @@ const toggleHeaderBkg = () => {
   let onClass;
   let offClass;
 
-  if (document.body.scrollTop <= mastheadBottom) {
+  if (document.body.scrollTop <= (mastheadBottom - headerBottom - 6)) {
     onClass = onMasthead;
     offClass = offMasthead;
   } else {

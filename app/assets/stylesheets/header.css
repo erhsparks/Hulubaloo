@@ -11,10 +11,12 @@ header {
 
 .on-masthead {
   background: linear-gradient(RGBa(0, 0, 0, 0.45), transparent);
+  transition: background .8s;
 }
 
 .off-masthead {
   background-color: RGBa(0, 0, 0, 0.85);
+  transition: background .8s;
 }
 
 .header-nav {
