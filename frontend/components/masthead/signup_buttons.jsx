@@ -7,7 +7,7 @@ const SignupButtons = ({ currentUser }) => {
     return (
       <div className='masthead-buttons'>
         <SessionModal displayText={'Guest Demo'}
-          formType={'Log In'}
+          formType={'Guest Log In'}
           displayType={'button'} />
 
         <SessionModal displayText={'Join Hulubaloo'}

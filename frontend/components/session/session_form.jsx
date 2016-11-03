@@ -4,10 +4,13 @@ import { Link, withRouter } from 'react-router';
 class SessionForm extends React.Component {
   constructor (props) {
     super(props);
+
     this.state = {
       username: "",
       password: ""
     };
+
+    this.formType = this.props.formType;
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -19,6 +22,21 @@ class SessionForm extends React.Component {
   loggedInRedirect() {
     if (this.props.loggedIn) {
       this.props.router.push('/');
+    }
+  }
+
+  componentDidMount () {
+    this.checkForGuest();
+  }
+
+  checkForGuest () {
+    if (this.props.formType === 'Guest Log In') {
+      this.setState({
+        username: 'Guest',
+        password: 'password'
+      });
+
+      this.formType = 'Log In';
     }
   }
 
@@ -70,7 +88,7 @@ class SessionForm extends React.Component {
           <a type='submit'
             className='fake-button'
             onClick={this.handleSubmit}>
-              {`${this.props.formType}`}
+              {`${this.formType}`}
           </a>
         </form>
 

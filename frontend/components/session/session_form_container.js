@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch, { formType }) => {
-  const processFormFcn = (formType === 'Log In') ? login : signup;
+  const processFormFcn = (formType === 'Sign Up') ? signup : login;
 
   return ({
     formType,
