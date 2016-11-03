@@ -12,4 +12,16 @@
 #
 
 class Video < ActiveRecord::Base
+  validates :title, :description, :preview_image_url, presence: true
+  validates :video_url, presence: true, uniqueness: true
+
+  has_many :categorizings,
+  primary_key: :id,
+  foreign_key: :video_id,
+  class_name: :VideoCategorizing,
+  dependent: :destroy
+
+  has_many :categories,
+  through: :categorizings,
+  source: :video_category
 end
