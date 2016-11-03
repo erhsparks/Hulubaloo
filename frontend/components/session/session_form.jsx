@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
 
 class SessionForm extends React.Component {
   constructor (props) {
@@ -14,16 +13,6 @@ class SessionForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.isGuest = this.isGuest.bind(this);
-  }
-
-  componentDidUpdate() {
-    this.loggedInRedirect();
-  }
-
-  loggedInRedirect() {
-    if (this.props.loggedIn) {
-      this.props.router.push('/');
-    }
   }
 
   componentDidMount () {
@@ -110,4 +99,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default withRouter(SessionForm);
+export default SessionForm;
