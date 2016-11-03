@@ -15,6 +15,23 @@
  *= require_self
  */
 
+.ReactModal__Overlay--after-open.ReactModal__Overlay {
+  background: RGBa(16, 16, 16, .7) !important;
+}
+
+/*modal uses inline styling -- I wouldn't normally resort to using important to override anything I'd written!*/
+
+.fake-button {
+  background: #66AA33;
+  color: #FFFFFF;
+  font-size: 14px;
+  display: flex;
+  border-radius: 2px;
+  min-width: 100px;
+  justify-content: center;
+  padding: 6px 22px;
+}
+
 a:hover {
   cursor: pointer;
 }

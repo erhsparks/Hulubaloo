@@ -29,15 +29,6 @@ class SessionForm extends React.Component {
     this.props.processForm({user});
   }
 
-  linkTo () {
-    const link = (this.props.formType === 'Log In') ? '/signup' : '/login';
-    const linkName = (this.props.formType === 'Log In') ? 'Sign Up' : 'Log In';
-
-    return (
-      <Link to={link}>{linkName}</Link>
-    );
-  }
-
   updateParam (paramName) {
     return e => this.setState({
       [paramName]: e.currentTarget.value
@@ -56,27 +47,31 @@ class SessionForm extends React.Component {
     return (
       <div className='session-form-container'>
         <h1>
-          {this.props.formType} or {this.linkTo()}
+          {this.props.formType}
         </h1>
 
         <form className='session-form'>
-          <label>Username
-            <input
-              type='text'
-              value={this.state.username}
-              onChange={this.updateParam('username')} />
-          </label>
+          <div className='user-inputs'>
+            <label>Username
+              <input
+                type='text'
+                value={this.state.username}
+                onChange={this.updateParam('username')} />
+            </label>
 
-          <label>Password
-            <input
-              type='password'
-              value={this.state.password}
-              onChange={this.updateParam('password')} />
-          </label>
+            <label>Password
+              <input
+                type='password'
+                value={this.state.password}
+                onChange={this.updateParam('password')} />
+            </label>
+          </div>
 
-          <input type='submit'
-            onClick={this.handleSubmit}
-            value={`${this.props.formType}`} />
+          <a type='submit'
+            className='fake-button'
+            onClick={this.handleSubmit}>
+              {`${this.props.formType}`}
+          </a>
         </form>
 
         <ul className='session-form-errors'>

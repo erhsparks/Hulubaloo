@@ -1,5 +1,5 @@
 body, main, header, footer, nav,
-div, img, p, a, ul, li, h1 {
+div, img, p, a, ul, li, h1, input {
   margin: 0;
   padding: 0;
   border: 0;
@@ -8,6 +8,7 @@ div, img, p, a, ul, li, h1 {
   font-family: sans-serif;
   text-decoration: none;
   list-style: none;
+  outline: inherit;
 }
 
 main, header, footer,

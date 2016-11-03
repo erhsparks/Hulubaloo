@@ -15,15 +15,7 @@
   align-self: flex-end;
 }
 
-.masthead-buttons a {
-  background: #66AA33;
-  color: #FFFFFF;
-  font-size: 14px;
-  display: flex;
-  border-radius: 2px;
-  margin-left: 30%;
-  margin-bottom: 20%;
-  min-width: 100px;
-  justify-content: center;
-  padding: 6px 22px;
+.masthead-buttons .fake-button {
+  margin-left: 30px;
+  margin-bottom: 20px;
 }

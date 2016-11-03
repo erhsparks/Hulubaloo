@@ -1,9 +1,17 @@
 import React from 'react';
+import SessionModal from '../session/session_modal';
 import { Link } from 'react-router';
 
 export default () => (
   <ul className='user-menu'>
-    <li><Link to='/signup'>SIGN UP NOW</Link></li>
-    <li><Link to='/login'>LOG IN</Link></li>
+    <li>
+      <SessionModal displayText={'GUEST DEMO'} formType={'Log In'} />
+    </li>
+    <li>
+      <SessionModal displayText={'SIGN UP NOW'} formType={'Sign Up'} />
+    </li>
+    <li>
+      <SessionModal displayText={'LOG IN'} formType={'Log In'} />
+    </li>
   </ul>
 );
