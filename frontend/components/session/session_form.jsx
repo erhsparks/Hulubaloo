@@ -69,9 +69,9 @@ class SessionForm extends React.Component {
   render () {
     return (
       <div className='session-form-container'>
-        <h1>{this.props.formType}</h1>
-
         <form className='session-form'>
+          <h1>{this.props.formType}</h1>
+
           <div className='user-input-fields'>
             <div className='user-input-labels'>
               <label htmlFor='username'>Username</label>
@@ -95,16 +95,16 @@ class SessionForm extends React.Component {
             </div>
           </div>
 
+          <ul className='session-form-errors'>
+            {this.errors()}
+          </ul>
+
           <a type='submit'
             className='fake-button'
             onClick={this.handleSubmit}>
               {`${this.formType}`}
           </a>
         </form>
-
-        <ul className='session-form-errors'>
-          {this.errors()}
-        </ul>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 .session-modal {
   width: 40%;
-  height: 250px;
+  min-height: 260px;
   margin: 150px auto;
   display: flex;
   align-self: center;
@@ -65,8 +65,29 @@
   color: #aaaaaa;
 }
 
-.session-form-errors {
-  margin: 8px auto 0px;
+.session-form-errors li {
+  margin: 0px auto;
   color: #EF3E3E;
   justify-content: space-between;
+  text-align: center;
+}
+
+.session-form-errors,
+.session-form-errors li:first-child {
+  margin-top: 0px;
+}
+
+.session-form-errors li:last-child {
+  margin-bottom: 10px;
+}
+
+.session-modal .fake-button {
+  margin-top: 12px;
+  margin-bottom: 10px;
+}
+
+.session-modal h1 {
+  margin-top: 12px;
+  margin-bottom: 5px;
+  text-align: center;
 }
