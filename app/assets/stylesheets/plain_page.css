@@ -1,0 +1,49 @@
+.plain-page {
+  display: flex;
+  margin: auto;
+}
+
+.footer-link-page {
+  border: 1px solid #66AA33;
+  border-radius: 5px;
+  width: 60%;
+  margin: 160px 20% 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer-link-page > * {
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.footer-link-page h1 {
+  margin-bottom: 5%;
+}
+
+.footer-link-page p {
+  margin: 1% 7% auto;
+}
+
+.footer-link-page ul {
+  margin-top: 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-link-page a {
+  color: #66AA33;
+}
+
+.footer-link-page li {
+  margin: 5px;
+}
+
+.no-margin {
+  margin: 0px;
+  font-size: 20px;
+}
