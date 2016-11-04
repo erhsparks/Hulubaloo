@@ -25,7 +25,7 @@ export const fetchAllCategories = (success, error) => {
   });
 };
 
-export const fetchVideosByCategory = (id, success, error) => {
+export const fetchVideosInCategory = (id, success, error) => {
   $.ajax({
     method: 'GET',
     url: `/api/categories/${id}`,

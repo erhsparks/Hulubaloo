@@ -6,6 +6,13 @@ import Modal from 'react-modal';
 import Root from './components/root';
 import toggleHeaderBkg from './header_scroll_handler';
 
+import {
+  fetchAllVideos,
+  fetchVideo,
+  fetchAllCategories,
+  fetchVideosInCategory
+ } from './actions/video_actions';
+
 document.addEventListener('DOMContentLoaded', () => {
   const preloadedState = checkForLogin();
   const store = configureStore(preloadedState);
@@ -16,4 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   toggleHeaderBkg();
   window.onscroll = () => toggleHeaderBkg();
+
+// this commit only; for testing
+  window.fetchAllVideos = fetchAllVideos;
+  window.fetchVideo = fetchVideo;
+  window.fetchAllCategories = fetchAllCategories;
+  window.fetchVideosInCategory = fetchVideosInCategory;
+  window.store = store;
 });
