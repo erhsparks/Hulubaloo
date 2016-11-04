@@ -8,7 +8,7 @@ import {
   Link
 } from 'react-router';
 import App from './app.jsx';
-import SessionFormContainer from './session/session_form_container';
+import Home from './home.jsx';
 
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -20,7 +20,9 @@ const Root = ({ store }) => {
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
-        <Route path='/' component={App} />
+        <Route path='/' component={App}>
+          <IndexRoute component={Home} />
+        </Route>
       </Router>
     </Provider>
   );

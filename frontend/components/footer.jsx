@@ -9,6 +9,7 @@ export default () => (
         <li><a target="_blank">Jobs</a></li>
         <li><a target="_blank" href='https://github.com/erhsparks'>Github</a></li>
         <li><a target="_blank" href='https://github.com/erhsparks/Hulubaloo'>Source code</a></li>
+        <li><a target="_blank">Disclaimer</a></li>
       </ul>
 
       <ul className='footer-ul'>
