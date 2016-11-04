@@ -1,4 +1,10 @@
 import {
+  login,
+  logout,
+  signup
+} from '../util/session_api_util';
+
+import {
   LOGIN,
   LOGOUT,
   SIGNUP,
@@ -6,13 +12,7 @@ import {
   receiveErrors
 } from '../actions/session_actions';
 
-import {
-  login,
-  logout,
-  signup
-} from '../util/session_api_util';
-
-const SessionMiddleware = ({ getState, dispatch }) => next => action => {
+const SessionMiddleware = ({ dispatch }) => next => action => {
   const sessionSuccess = user => dispatch(receiveCurrentUser(user));
   const sessionErrors = e => dispatch(receiveErrors(e.responseJSON));
 
