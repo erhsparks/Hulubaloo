@@ -1,12 +1,3 @@
-export const fetchAllVideos = (success, error) => {
-  $.ajax({
-    method: 'GET',
-    url: '/api/videos',
-    success,
-    error
-  });
-};
-
 export const fetchVideo = (id, success, error) => {
   $.ajax({
     method: 'GET',
@@ -16,7 +7,7 @@ export const fetchVideo = (id, success, error) => {
   });
 };
 
-export const fetchAllCategories = (success, error) => {
+export const fetchCategories = (success, error) => {
   $.ajax({
     method: 'GET',
     url: '/api/categories',
@@ -25,7 +16,7 @@ export const fetchAllCategories = (success, error) => {
   });
 };
 
-export const fetchVideosInCategory = (id, success, error) => {
+export const fetchCategory = (id, success, error) => {
   $.ajax({
     method: 'GET',
     url: `/api/categories/${id}`,

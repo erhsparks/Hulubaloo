@@ -1,14 +1,12 @@
 import { merge } from 'lodash';
-import {
-  RECEIVE_ALL_VIDEOS,
-  RECEIVE_VIDEO,
-  RECEIVE_ALL_CATEGORIES,
-  RECEIVE_VIDEOS_IN_CATEGORY
-} from '../actions/video_actions';
+import { RECEIVE_VIDEO } from '../actions/video_actions';
 
 const _defaultState = {
-  videos: {},
-  categories: {},
+  id: null,
+  title: '',
+  description: '',
+  imgUrl: '',
+  videoUrl: '',
   errors: []
 };
 
@@ -17,14 +15,8 @@ const VideoReducer = (state = _defaultState, action) => {
   Object.freeze(_defaultState);
 
   switch (action.type) {
-    case RECEIVE_ALL_VIDEOS:
-      return merge({}, _defaultState, { videos: action.videos });
     case RECEIVE_VIDEO:
-      return merge({}, _defaultState, { videos: action.video });
-    case RECEIVE_ALL_CATEGORIES:
-      return merge({}, _defaultState, { categories: action.categories });
-    case RECEIVE_VIDEOS_IN_CATEGORY:
-      return merge({}, state, { categories: action.category });
+      return merge({}, _defaultState, action.video);
     default:
       return merge({}, state);
   }
