@@ -5,10 +5,24 @@
   min-height: 367px;
   height: 68vh;
   max-height: 600px;
-  background: #292929;
+  background-color: #292929;
+}
+
+.masthead-featured {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  height: 100%;
+  opacity: 0.6;
+}
+
+.masthead-featured img {
+  width: 25%;
+  height: 100%;
 }
 
 .masthead-buttons {
+  position: absolute;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -16,6 +30,6 @@
 }
 
 .masthead-buttons .fake-button {
-  margin-left: 30px;
-  margin-bottom: 20px;
+  margin-left: 50px;
+  margin-bottom: 50px;
 }

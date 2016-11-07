@@ -17,19 +17,19 @@
 
 .ReactModal__Overlay--after-open.ReactModal__Overlay {
   background: RGBa(16, 16, 16, .7) !important;
+  /*modal uses inline styling -- I wouldn't use important to override anything I'd actually written!*/
 }
-
-/*modal uses inline styling -- I wouldn't normally resort to using important to override anything I'd written!*/
 
 .fake-button {
   background: #66AA33;
   color: #FFFFFF;
   font-size: 14px;
   display: flex;
-  border-radius: 2px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 2px #D6D6D6;
   min-width: 100px;
   justify-content: center;
-  padding: 6px 22px;
+  padding: 10px 30px;
 }
 
 a:hover {
