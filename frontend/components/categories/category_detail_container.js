@@ -1,12 +1,9 @@
 import { connect } from 'react-redux';
+import {rowsOfFour } from '../../reducers/selectors_and_transformers';
 import CategoryDetail from './category_detail';
 
 const mapStateToProps = ({ category }) => {
-  let videos = category.videos;
-  let rows = [];
-  for (let i = 0; i < videos.length; i += 4) {
-    rows.push(videos.slice(i + 0, i + 4));
-  }
+  let rows = rowsOfFour(category.videos);
 
   return ({
     category,

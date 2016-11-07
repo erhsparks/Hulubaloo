@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import FeaturedCategoriesVideo from './featured_categories_video';
+import CategoryVideo from './category_video';
 
 const FeaturedCategoriesRow = ({ category }) => (
   <li className='featured-categories-row'>
@@ -12,7 +12,7 @@ const FeaturedCategoriesRow = ({ category }) => (
 
     <ul className='featured-categories-videos'>
       {category.videos.map(video => (
-        <FeaturedCategoriesVideo key={video.id} video={video} />
+        <CategoryVideo key={video.id} video={video} />
       ))}
     </ul>
   </li>
