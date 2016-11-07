@@ -8,6 +8,21 @@
   background-color: #292929;
 }
 
+.masthead:after {
+  content: 'hulubaloo is hulu. plus.';
+  text-transform: uppercase;
+  font-style: italic;
+  position: absolute;
+  color: #66AA33;
+  font-weight: bold;
+  font-size: 52px;
+  margin-top: 3.2em;
+  text-shadow: 0px 0px 10px #000;
+  width: 100%;
+  text-align: center;
+  align-self: baseline;
+}
+
 .masthead-featured {
   display: flex;
   flex-direction: row;
@@ -30,6 +45,6 @@
 }
 
 .masthead-buttons .fake-button {
-  margin-left: 50px;
-  margin-bottom: 50px;
+  margin-left: 60px;
+  margin-bottom: 45px;
 }
