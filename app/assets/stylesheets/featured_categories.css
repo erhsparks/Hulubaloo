@@ -1,0 +1,33 @@
+.featured-categories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.featured-categories h1 {
+  font-size: 26px;
+  color: #AAAAAA;
+  font-weight: 200;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+}
+
+.featured-categories-row {
+  margin: 50px auto;
+}
+
+.featured-categories-row h1 {
+  margin-left: 20px;
+}
+
+.featured-categories-videos {
+  display: flex;
+  flex-direction: row;
+}
+
+.featured-video {
+  width: 220px;
+  height: 318px;
+  margin: 20px;
+  border: 2px solid #FFF;
+}
