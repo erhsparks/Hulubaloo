@@ -16,10 +16,10 @@ export const fetchCategories = (success, error) => {
   });
 };
 
-export const fetchCategory = (id, success, error) => {
+export const fetchCategory = (name, success, error) => {
   $.ajax({
     method: 'GET',
-    url: `/api/categories/${id}`,
+    url: `/api/categories/${name}`,
     success,
     error
   });

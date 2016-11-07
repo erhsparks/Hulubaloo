@@ -41,7 +41,7 @@ const Root = ({ store }) => {
       <Router history={hashHistory}>
         <Route path='/' component={App}>
           <IndexRoute component={Home} onEnter={loadCategories} />
-          <Route path='categories/:categoryId' component={CategoryDetailContainer} onEnter={loadCategory} />
+          <Route path=':categoryId' component={CategoryDetailContainer} onEnter={loadCategory} />
           <Route path='about' component={About} />
           <Route path='jobs' component={Jobs} />
           <Route path='disclaimer' component={Disclaimer} />

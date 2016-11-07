@@ -20,4 +20,8 @@ class VideoCategory < ActiveRecord::Base
   has_many :videos,
   through: :categorizings,
   source: :video
+
+  def to_param
+    name
+  end
 end

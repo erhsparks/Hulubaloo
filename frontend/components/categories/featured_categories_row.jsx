@@ -5,7 +5,7 @@ import CategoryVideo from './category_video';
 const FeaturedCategoriesRow = ({ category }) => (
   <li className='featured-categories-row'>
     <h1>
-      <Link to={`categories/${category.id}`}>
+      <Link to={`${category.name}`}>
         {category.name}
       </Link>
     </h1>

@@ -3,7 +3,7 @@ import CategoryRow from './category_row';
 
 const CategoryDetail = ({ category, rows }) => (
   <article className='category-detail'
-       style={{minHeight: `${$(window).height() - 50}px`}}>
+       style={{minHeight: `${$(window).height() - 159}px`}}>
        <header className='category-header'>
          <h1 className='page-width'>
            {category.name}

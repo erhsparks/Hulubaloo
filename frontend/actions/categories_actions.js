@@ -7,9 +7,9 @@ export const fetchCategories = () => ({
   type: FETCH_CATEGORIES
 });
 
-export const fetchCategory = id => ({
+export const fetchCategory = name => ({
   type: FETCH_CATEGORY,
-  id
+  name
 });
 
 export const receiveCategories = categories => ({

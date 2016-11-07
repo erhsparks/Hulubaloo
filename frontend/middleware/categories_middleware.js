@@ -20,7 +20,7 @@ const CategoriesMiddleware = ({ dispatch }) => next => action => {
       return next(action);
     case FETCH_CATEGORY:
       const categorySuccess = category => dispatch(receiveCategory(category));
-      fetchCategory(action.id, categorySuccess, fetchError);
+      fetchCategory(action.name, categorySuccess, fetchError);
       return next(action);
     default:
       return next(action);
