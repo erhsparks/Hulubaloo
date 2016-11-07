@@ -4,9 +4,11 @@ import {
   Router,
   Route,
   IndexRoute,
-  hashHistory,
-  Link
+  hashHistory
 } from 'react-router';
+
+import { fetchCategories } from '../actions/categories_actions';
+
 import App from './app.jsx';
 import Home from './home.jsx';
 import { About } from './footer/about';
@@ -22,11 +24,17 @@ const Root = ({ store }) => {
     }
   };
 
+  const loadCategories = () => {
+    console.log(store.getState().categories);
+    store.dispatch(fetchCategories());
+    console.log(store.getState().categories);
+  };
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path='/' component={App}>
-          <IndexRoute component={Home} />
+          <IndexRoute component={Home} onEnter={loadCategories} />
           <Route path='about' component={About} />
           <Route path='jobs' component={Jobs} />
           <Route path='disclaimer' component={Disclaimer} />
