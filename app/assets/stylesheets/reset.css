@@ -1,5 +1,6 @@
 body, main, header, footer, nav,
-div, img, p, a, ul, li, h1, input {
+div, img, p, a, ul, li, h1, h2,
+input, article {
   margin: 0;
   padding: 0;
   border: 0;
@@ -16,9 +17,15 @@ div, img, p, a, ul, li {
   max-width: 1600px;
 }
 
+main, header, footer {
+  min-width: 980px
+}
+
 .page-width {
   width: 86%;
   max-width: 1426px;
+  align-self: center;
+  margin: auto;
 }
 
 body {

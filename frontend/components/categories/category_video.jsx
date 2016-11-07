@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const FeaturedCategoriesVideo = ({ video }) => (
+const CategoryVideo = ({ video }) => (
   <li>
     <Link to={`watch/${video.id}`}>
       <img className='featured-video'
@@ -11,4 +11,4 @@ const FeaturedCategoriesVideo = ({ video }) => (
   </li>
 );
 
-export default FeaturedCategoriesVideo;
+export default CategoryVideo;

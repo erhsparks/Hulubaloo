@@ -1,0 +1,19 @@
+.category-detail {
+  padding-top: 59px;
+}
+
+.category-header {
+  background: rgba(225,225,225,0.95);
+  border-bottom: 1px solid #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.category-header h1 {
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 26px;
+  color: #666666;
+  padding: 4px 0px 0px 1px;
+}

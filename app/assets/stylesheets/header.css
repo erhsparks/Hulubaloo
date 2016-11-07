@@ -3,11 +3,13 @@ header {
   height: 60px;
   font-size: 15px;
   font-weight: normal;
+  align-items: center;
+}
 
+.global-header {
   display: flex;
   position: fixed;
   z-index: 10;
-  align-items: center;
 }
 
 .on-masthead {

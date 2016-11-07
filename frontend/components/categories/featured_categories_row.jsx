@@ -1,24 +1,21 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { Link } from 'react-router';
 import FeaturedCategoriesVideo from './featured_categories_video';
 
-const FeaturedCategoriesRow = ({ category, router }) => {
-  const handleClick = url => e => router.push(url);
-
-  return (
-    <li className='featured-categories-row'>
-      <h1
-        onClick={handleClick(`categories/${category.id}`)}>
+const FeaturedCategoriesRow = ({ category }) => (
+  <li className='featured-categories-row'>
+    <h1>
+      <Link to={`categories/${category.id}`}>
         {category.name}
-      </h1>
+      </Link>
+    </h1>
 
-      <ul className='featured-categories-videos'>
-        {category.videos.map(video => (
-          <FeaturedCategoriesVideo key={video.id} video={video} />
-        ))}
-      </ul>
-    </li>
-  );
-};
+    <ul className='featured-categories-videos'>
+      {category.videos.map(video => (
+        <FeaturedCategoriesVideo key={video.id} video={video} />
+      ))}
+    </ul>
+  </li>
+);
 
-export default withRouter(FeaturedCategoriesRow);
+export default FeaturedCategoriesRow;

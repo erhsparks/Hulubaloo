@@ -7,10 +7,14 @@ import {
   hashHistory
 } from 'react-router';
 
-import { fetchCategories } from '../actions/categories_actions';
+import {
+  fetchCategories,
+  fetchCategory
+} from '../actions/categories_actions';
 
 import App from './app.jsx';
 import Home from './home.jsx';
+import CategoryDetailContainer from './categories/category_detail_container';
 import { About } from './footer/about';
 import { Jobs } from './footer/jobs';
 import { Disclaimer } from './footer/disclaimer';
@@ -25,9 +29,11 @@ const Root = ({ store }) => {
   };
 
   const loadCategories = () => {
-    console.log(store.getState().categories);
     store.dispatch(fetchCategories());
-    console.log(store.getState().categories);
+  };
+
+  const loadCategory = nextState => {
+    store.dispatch(fetchCategory(nextState.params.categoryId));
   };
 
   return (
@@ -35,6 +41,7 @@ const Root = ({ store }) => {
       <Router history={hashHistory}>
         <Route path='/' component={App}>
           <IndexRoute component={Home} onEnter={loadCategories} />
+          <Route path='categories/:categoryId' component={CategoryDetailContainer} onEnter={loadCategory} />
           <Route path='about' component={About} />
           <Route path='jobs' component={Jobs} />
           <Route path='disclaimer' component={Disclaimer} />

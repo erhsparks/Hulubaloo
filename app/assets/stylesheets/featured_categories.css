@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .featured-categories h1 {
@@ -10,24 +11,29 @@
   font-weight: 200;
   text-transform: uppercase;
   text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+  padding: 20px 0px;
 }
 
 .featured-categories-row {
   margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-.featured-categories-row h1 {
-  margin-left: 20px;
+.featured-categories-row ul {
+  display: flex;
+  flex-direction: row;
 }
 
 .featured-categories-videos {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .featured-video {
   width: 220px;
   height: 318px;
-  margin: 20px;
   border: 2px solid #FFF;
 }
