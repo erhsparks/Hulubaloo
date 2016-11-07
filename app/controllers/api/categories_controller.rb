@@ -6,7 +6,6 @@ class Api::CategoriesController < ApplicationController
 
   def show
     @category = VideoCategory.find(params[:id])
-    @videos = @category.videos
     render :show
   end
 end
