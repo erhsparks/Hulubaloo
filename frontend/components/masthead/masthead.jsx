@@ -18,6 +18,10 @@ const Masthead = () => (
         alt='The Iron Giant poster' />
     </div>
 
+    <h1 className='masthead-text'>
+      hulubaloo is hulu. plus.
+    </h1>
+
     <SignupButtonsContainer />
   </section>
 );

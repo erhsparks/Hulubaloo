@@ -6,21 +6,21 @@
   height: 68vh;
   max-height: 600px;
   background-color: #292929;
+  width: 100%;
 }
 
-.masthead:after {
-  content: 'hulubaloo is hulu. plus.';
+.masthead-text {
   text-transform: uppercase;
   font-style: italic;
-  position: absolute;
-  color: #66AA33;
   font-weight: bold;
   font-size: 52px;
-  margin-top: 3.2em;
+  color: #66AA33;
   text-shadow: 0px 0px 10px #000;
+  position: absolute;
   width: 100%;
+  max-width: 1600px;
   text-align: center;
-  align-self: baseline;
+  align-self: center;
 }
 
 .masthead-featured {
