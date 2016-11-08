@@ -5,9 +5,8 @@ const _defaultState = {
   id: null,
   title: '',
   description: '',
-  imgUrl: '',
-  videoUrl: '',
-  errors: []
+  preview_image_url: '',
+  video_url: ''
 };
 
 const VideoReducer = (state = _defaultState, action) => {

@@ -12,9 +12,14 @@ import {
   fetchCategory
 } from '../actions/categories_actions';
 
+import {
+  fetchVideo
+} from '../actions/video_actions';
+
 import App from './app.jsx';
 import Home from './home.jsx';
 import CategoryDetailContainer from './categories/category_detail_container';
+import VideoDetailContainer from './videos/video_detail_container';
 import { About } from './footer/about';
 import { Jobs } from './footer/jobs';
 import { Disclaimer } from './footer/disclaimer';
@@ -22,8 +27,10 @@ import { Terms } from './footer/terms';
 import { Privacy } from './footer/privacy';
 
 const Root = ({ store }) => {
-  const _redirectIfLoggedIn = (nextState, replace) => {
-    if (store.getState().session.currentUser) {
+  const _redirectIfLoggedOut = (nextState, replace) => {
+    let currentUser = store.getState().session.currentUser;
+
+    if (!currentUser) {
       replace('/');
     }
   };
@@ -36,12 +43,18 @@ const Root = ({ store }) => {
     store.dispatch(fetchCategory(nextState.params.categoryName));
   };
 
+  const loadVideo = (nextState, replace) => {
+    _redirectIfLoggedOut(nextState, replace);
+    store.dispatch(fetchVideo(nextState.params.videoId));
+  };
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path='/' component={App}>
           <IndexRoute component={Home} onEnter={loadCategories} />
           <Route path=':categoryName' component={CategoryDetailContainer} onEnter={loadCategory} />
+          <Route path='watch/:videoId' component={VideoDetailContainer} onEnter={loadVideo} />
           <Route path='about' component={About} />
           <Route path='jobs' component={Jobs} />
           <Route path='disclaimer' component={Disclaimer} />
