@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20161108190346) do
     t.date     "date",                       null: false
     t.time     "time",                       null: false
     t.boolean  "active",     default: false, null: false
-    t.string   "currency",                   null: false
+    t.string   "currency"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end

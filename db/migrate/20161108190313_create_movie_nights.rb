@@ -7,7 +7,7 @@ class CreateMovieNights < ActiveRecord::Migration
       t.date    :date, null: false
       t.time    :time, null: false
       t.boolean :active, null: false, default: false
-      t.string  :currency, null: false
+      t.string  :currency
 
       t.index :host_id
       t.index :video_id

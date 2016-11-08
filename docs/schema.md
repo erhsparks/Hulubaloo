@@ -44,9 +44,9 @@ column name       | data type | details
 id                | integer   | not null, primary key
 host_id           | integer   | not null, indexed, foreign key references users
 video_id          | integer   | not null, indexed, foreign key references videos
-title             | string    | default: 'video.title hosted by host.name'
-start date        | date      | not null
-start time        | time      | not null
+title             | string    | default: 'video.title date at time'
+start_date        | date      | not null
+start_time        | time      | not null
 active            | boolean   | not null, default: false
 created_at        | datetime  | not null
 updated_at        | datetime  | not null
