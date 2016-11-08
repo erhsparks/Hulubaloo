@@ -7,6 +7,9 @@ const FeaturedCategoriesRow = ({ category }) => (
     <h1>
       <Link to={`${category.name}`}>
         {category.name}
+        <span className='carrot'>
+          &nbsp;&nbsp;&gt;
+        </span>
       </Link>
     </h1>
 
