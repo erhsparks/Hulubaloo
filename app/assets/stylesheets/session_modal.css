@@ -13,10 +13,6 @@
   border-radius: 5px;
 }
 
-.session-modal input {
-  background: #D6D6D6;
-}
-
 .session-form-container, .session-form,
 .user-input-labels, .user-inputs {
   width: 100%;
@@ -40,7 +36,7 @@
 }
 
 .user-input-labels {
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 18px;
 }
 
@@ -54,19 +50,31 @@
 }
 
 .user-inputs input {
+  background: #D6D6D6;
+  background: radial-gradient(#EFEFEF 70%, #D6D6D6);
   margin: auto 5px;
   padding: 3.5px;
+  padding-left: 9px;
+  border: 1px solid #444444;
   border-radius: 2px;
-  font-size: 14px;
+  font-size: 13px;
 }
 
-.user-input-labels label:first-child,
-.user-inputs input:first-child {
+.user-input-labels label:first-child {
   margin-bottom: 8px;
 }
 
-.guest-form {
+.user-inputs input:first-child {
+  margin-bottom: 9px;
+}
+
+.user-inputs input:last-child {
+  margin-top: 3px;
+}
+
+input.guest-form {
   color: #aaaaaa;
+  border-color: #aaaaaa;
 }
 
 .session-form-errors li {
