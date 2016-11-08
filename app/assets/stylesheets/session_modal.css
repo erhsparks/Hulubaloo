@@ -27,6 +27,10 @@
   margin: auto;
 }
 
+.session-form-container {
+  margin: 15% auto;
+}
+
 .user-input-fields {
   display: flex;
   flex-direction: row;
