@@ -40,3 +40,8 @@ a:hover {
 a:not(.fake-button):hover {
   color: #66AA33;
 }
+
+.hulubaloo-logo {
+  width: 120px;
+  height: 20px;
+}
