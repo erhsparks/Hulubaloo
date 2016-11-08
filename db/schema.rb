@@ -11,10 +11,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103210824) do
+ActiveRecord::Schema.define(version: 20161108190346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "body",       null: false
+    t.integer  "author_id",  null: false
+    t.integer  "showing_id", null: false
+    t.integer  "parent_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["author_id"], name: "index_comments_on_author_id", using: :btree
+  add_index "comments", ["parent_id"], name: "index_comments_on_parent_id", using: :btree
+  add_index "comments", ["showing_id"], name: "index_comments_on_showing_id", using: :btree
+
+  create_table "movie_nights", force: :cascade do |t|
+    t.integer  "host_id",                    null: false
+    t.integer  "video_id",                   null: false
+    t.string   "title"
+    t.date     "date",                       null: false
+    t.time     "time",                       null: false
+    t.boolean  "active",     default: false, null: false
+    t.string   "currency",                   null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "movie_nights", ["host_id"], name: "index_movie_nights_on_host_id", using: :btree
+  add_index "movie_nights", ["title"], name: "index_movie_nights_on_title", using: :btree
+  add_index "movie_nights", ["video_id"], name: "index_movie_nights_on_video_id", using: :btree
+
+  create_table "screenings", force: :cascade do |t|
+    t.integer  "movie_night_id", null: false
+    t.integer  "viewer_id",      null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "screenings", ["movie_night_id"], name: "index_screenings_on_movie_night_id", using: :btree
+  add_index "screenings", ["viewer_id"], name: "index_screenings_on_viewer_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
