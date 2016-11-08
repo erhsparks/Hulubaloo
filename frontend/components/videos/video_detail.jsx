@@ -5,7 +5,7 @@ const VideoDetail = ({ video }) => (
        style={{minHeight: `${$(window).height() - 50}px`}}>
     <section className='masthead'>
       <iframe className='video-in-mast'
-        src={`//player.vimeo.com/video/190629446?autoplay=1&badge=0&byline=0&color=66AA33&portrait=0&title=0&logo=0`} />
+        src={`//player.vimeo.com/video/190629446?autoplay=1&badge=0&byline=0&color=66AA33&portrait=0&title=0`} />
     </section>
 
     <section className='video-info'>

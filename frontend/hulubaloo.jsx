@@ -5,7 +5,6 @@ import configureStore from './store/store';
 import Modal from 'react-modal';
 import Root from './components/root';
 import toggleHeaderBkg from './header_scroll_handler';
-import removeVimeoExtras from './vimeo_player_handler';
 
 document.addEventListener('DOMContentLoaded', () => {
   const preloadedState = checkForLogin();
@@ -18,6 +17,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   toggleHeaderBkg();
   window.onscroll = () => toggleHeaderBkg();
-
-  removeVimeoExtras();
 });
