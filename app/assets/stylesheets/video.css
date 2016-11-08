@@ -1,13 +1,14 @@
 .video-detail .masthead {
   height: 70vh;
+  max-height: none;
   padding-top: 45px;
   background: linear-gradient(#292929, #3c3c3c);
 }
 
 .video-in-mast {
   margin: auto;
-  min-width: 90%;
-  max-width: 95%;
+  min-width: 944px;
+  width: 75%;
   height: 95%;
   align-self: flex-start;
   border: 1px solid #3c3c3c;
@@ -19,10 +20,43 @@
   align-items: flex-start;
 }
 
-.video-in-mast p {
-  margin-top: 35px;
-  margin-left: 46px;
-  text-align: center;
+.logged-out-roadblock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 5% 0% 5% 7%;
+}
+
+.logged-out-roadblock h1 {
+  text-shadow: 0 2px #000;
+  font-size: 22px;
+  color: #e6e6e6;
+}
+
+.logged-out-roadblock > p {
+  font-size: 15px;
+  color: #d2d2d2;
+}
+
+.video-player-buttons .fake-button {
+  margin-bottom: 10%;
+}
+
+.logged-out-roadblock * {
+  margin-top: 4%;
+}
+
+.or-login-blurb {
+  color: #d2d2d2;
+  font-size: 12px;
+  margin-top: 14%;
+}
+
+.or-login-blurb * {
+  display: inline;
+  font-size: 12px;
+  color: #66AA33;
+  margin-left: 5px;
 }
 
 .video-info {
@@ -38,7 +72,7 @@
   flex-direction: column;
   color: #AAAAAA;
   margin-left: 4%;
-  width: 62%;
+  width: 55%;
 }
 
 .not-fixed {
