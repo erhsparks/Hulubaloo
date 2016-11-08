@@ -8,7 +8,7 @@ const FeaturedCategoriesRow = ({ category }) => (
       <Link to={`${category.name}`}>
         {category.name}
         <span className='carrot'>
-          &nbsp;&nbsp;&gt;
+          &nbsp;&gt;
         </span>
       </Link>
     </h1>
