@@ -44,13 +44,13 @@ const Root = ({ store }) => {
       <Router history={hashHistory}>
         <Route path='/' component={App}>
           <IndexRoute component={Home} onEnter={loadCategories} />
-          <Route path=':categoryName' component={CategoryDetailContainer} onEnter={loadCategory} />
           <Route path='watch/:videoId' component={VideoDetailContainer} onEnter={loadVideo} />
           <Route path='about' component={About} />
           <Route path='jobs' component={Jobs} />
           <Route path='disclaimer' component={Disclaimer} />
           <Route path='terms' component={Terms} />
           <Route path='privacy' component={Privacy} />
+          <Route path=':categoryName' component={CategoryDetailContainer} onEnter={loadCategory} />
         </Route>
       </Router>
     </Provider>
