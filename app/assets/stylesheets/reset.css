@@ -13,7 +13,7 @@ input, article, iframe {
 }
 
 main, header, footer,
-div, img, p, a, ul, li {
+img, p, a, ul, li {
   max-width: 1600px;
 }
 
