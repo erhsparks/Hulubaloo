@@ -38,6 +38,10 @@
   border: 2px solid #FFF;
 }
 
+.featured-video.no-show {
+  border: transparent;
+}
+
 .carrot {
   font-size: 34px;
 }
