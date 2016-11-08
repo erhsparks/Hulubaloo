@@ -27,14 +27,6 @@ import { Terms } from './footer/terms';
 import { Privacy } from './footer/privacy';
 
 const Root = ({ store }) => {
-  const _redirectIfLoggedOut = (nextState, replace) => {
-    let currentUser = store.getState().session.currentUser;
-
-    if (!currentUser) {
-      replace('/');
-    }
-  };
-
   const loadCategories = () => {
     store.dispatch(fetchCategories());
   };
@@ -44,7 +36,6 @@ const Root = ({ store }) => {
   };
 
   const loadVideo = (nextState, replace) => {
-    _redirectIfLoggedOut(nextState, replace);
     store.dispatch(fetchVideo(nextState.params.videoId));
   };
 
