@@ -49,13 +49,16 @@
   top: -322px;
   padding: 119px 70px;
   position: relative;
-}
-
-.play-button:hover{
   background-size: 80px 271px;
   background-position: -10px 8px;
   background-image: url('/assets/sprites.png');
   background-clip: content-box;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.featured-video:hover .play-button{
+  opacity: 1;
 }
 
 .featured-video.no-show {
