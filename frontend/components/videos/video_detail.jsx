@@ -15,7 +15,7 @@ const VideoDetail = ({ video, currentUser }) => {
         </h1>
 
         <p>
-          Get unlimited access to our entire collection of hit TV shows and movies with a Hulubaloo account.
+          Get unlimited access to our entire video collection when you sign up or log in as Guest.
         </p>
 
         <RoadblockButtonsContainer />

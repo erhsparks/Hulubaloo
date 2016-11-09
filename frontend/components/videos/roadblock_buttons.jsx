@@ -6,12 +6,12 @@ const RoadblockButtons = ({ currentUser }) => {
   if (!currentUser) {
     return (
       <div className='video-player-buttons'>
-        <SessionModalContainer displayText={'Guest Demo'}
-          formType={'Guest Log In'}
-          displayType={'button'} />
-
         <SessionModalContainer displayText={'Join Hulubaloo'}
           formType={'Sign Up'}
+          displayType={'button'} />
+
+        <SessionModalContainer displayText={'Guest Demo'}
+          formType={'Guest Log In'}
           displayType={'button'} />
 
         <p className='or-login-blurb'>
