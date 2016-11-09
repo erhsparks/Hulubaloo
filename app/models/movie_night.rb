@@ -42,7 +42,7 @@ class MovieNight < ActiveRecord::Base
     title = self.video.title
     day_of_week, day, month, year, time, gmt_offset = self.date_and_time_to_s
     time = self.strip_seconds(time)
-    timezone = self.timezone
+    timezone = self.local_time.zone
 
     self.title = "#{title} on #{day_of_week} #{month} #{day} at #{time} #{timezone}"
   end
@@ -66,11 +66,11 @@ class MovieNight < ActiveRecord::Base
     time_string.split(":").slice(0,2).join(":")
   end
 
-  def timezone
-    self.date_and_time.to_time.zone
+  def local_time
+    self.date_and_time.to_time
   end
 
   def date_and_time_to_s
-    self.date_and_time.to_datetime.readable_inspect.split(" ")
+    self.local_time.to_datetime.readable_inspect.split(" ")
   end
 end

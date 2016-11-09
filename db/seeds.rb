@@ -62,5 +62,5 @@ them = Video.create(title: 'Them!',
              preview_image_url: 'https://res.cloudinary.com/erhsparks/image/upload/v1478295419/them_obv3h6.jpg')
 them.categories.push(action, scifi, horror)
 
-mn = MovieNight.create(host_id: 1, video_id: 1, time: DateTime.new(2016, 11, 9, 13, 0, 0, '-8'))
+mn = MovieNight.create(host_id: 1, video_id: 1, date_and_time: DateTime.new(2016, 11, 9, 13, 0, 0, '-8'))
 mn.participants << me << asdf
