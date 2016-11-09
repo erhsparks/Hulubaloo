@@ -48,6 +48,16 @@ class MovieNight < ActiveRecord::Base
     self.comments.where(parent_id: nil)
   end
 
+  def nested_comments
+    nested = Hash.new { |h, k| h[k] = [] }
+
+    self.top_level_comments.each do |comment|
+      nested[comment.id] = self.comments.where(parent_id: comment.id)
+    end
+
+    nested
+  end
+
   def set_title
     title = self.video.title
     day_of_week, day, month, year, time, gmt_offset = self.date_and_time_to_s
