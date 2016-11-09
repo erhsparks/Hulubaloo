@@ -34,6 +34,12 @@ class User < ActiveRecord::Base
   through: :viewings,
   source: :movie_night
 
+  has_many :authored_comments,
+  primary_key: :id,
+  foreign_key: :author_id,
+  class_name: :Comment,
+  inverse_of: :author
+
   def self.find_by_credentials(user_params)
     test_user = User.find_by_username(user_params[:username])
     return ["Username not found!"] unless test_user

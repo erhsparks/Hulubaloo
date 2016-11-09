@@ -38,6 +38,16 @@ class MovieNight < ActiveRecord::Base
   through: :viewings,
   source: :viewer
 
+  has_many :comments,
+  primary_key: :id,
+  foreign_key: :movie_night_id,
+  class_name: :Comment,
+  inverse_of: :movie_night
+
+  def top_level_comments
+    self.comments.where(parent_id: nil)
+  end
+
   def set_title
     title = self.video.title
     day_of_week, day, month, year, time, gmt_offset = self.date_and_time_to_s

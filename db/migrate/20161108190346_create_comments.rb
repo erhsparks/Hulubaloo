@@ -3,11 +3,11 @@ class CreateComments < ActiveRecord::Migration
     create_table :comments do |t|
       t.text    :body, null: false
       t.integer :author_id, null: false
-      t.integer :showing_id, null: false
+      t.integer :movie_night_id, null: false
       t.integer :parent_id
 
       t.index   :author_id
-      t.index   :showing_id
+      t.index   :movie_night_id
       t.index   :parent_id
 
       t.timestamps null: false

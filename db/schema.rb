@@ -17,17 +17,17 @@ ActiveRecord::Schema.define(version: 20161108190346) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.text     "body",       null: false
-    t.integer  "author_id",  null: false
-    t.integer  "showing_id", null: false
+    t.text     "body",           null: false
+    t.integer  "author_id",      null: false
+    t.integer  "movie_night_id", null: false
     t.integer  "parent_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   add_index "comments", ["author_id"], name: "index_comments_on_author_id", using: :btree
+  add_index "comments", ["movie_night_id"], name: "index_comments_on_movie_night_id", using: :btree
   add_index "comments", ["parent_id"], name: "index_comments_on_parent_id", using: :btree
-  add_index "comments", ["showing_id"], name: "index_comments_on_showing_id", using: :btree
 
   create_table "movie_nights", force: :cascade do |t|
     t.integer  "host_id",                       null: false
