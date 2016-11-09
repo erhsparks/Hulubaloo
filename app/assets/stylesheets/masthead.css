@@ -13,15 +13,15 @@
   text-transform: uppercase;
   font-style: italic;
   font-weight: bold;
-  font-size: 54px;
-  color: #66AA33;
-  text-shadow: 0px 0px 10px #000;
+  font-size: 56px;
+  color: #64A931;
+  text-shadow: 1px 1px 0px #292929;
   position: absolute;
   width: 100%;
   max-width: 1600px;
   text-align: center;
   align-self: flex-start;;
-  margin-top: 12%;
+  margin-top: 15%;
 }
 
 .masthead-featured {
@@ -29,7 +29,7 @@
   flex-direction: row;
   align-self: flex-end;
   height: 100%;
-  opacity: 0.6;
+  opacity: 0.3;
 }
 
 .masthead-featured img {
