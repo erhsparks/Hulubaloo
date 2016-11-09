@@ -1,6 +1,6 @@
 body, main, header, footer, nav,
 div, img, p, a, ul, li, h1, h2,
-input, article, iframe {
+h3, input, article, iframe {
   margin: 0;
   padding: 0;
   border: 0;

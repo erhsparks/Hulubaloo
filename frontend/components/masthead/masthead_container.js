@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import SignupButtons from './signup_buttons';
+import Masthead from './masthead';
 
 const mapStateToProps = ({ session }) => ({
   currentUser: session.currentUser
@@ -7,4 +7,4 @@ const mapStateToProps = ({ session }) => ({
 
 export default connect(
   mapStateToProps
-)(SignupButtons);
+)(Masthead);
