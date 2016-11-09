@@ -18,6 +18,22 @@ class User < ActiveRecord::Base
   attr_reader :password
   after_initialize :ensure_session_token
 
+  has_many :hosted_movie_nights,
+  primary_key: :id,
+  foreign_key: :host_id,
+  class_name: :MovieNight,
+  dependent: :destroy
+
+  has_many :viewings,
+  primary_key: :id,
+  foreign_key: :viewer_id,
+  class_name: :Screening,
+  dependent: :destroy
+
+  has_many :viewed_movie_nights,
+  through: :viewings,
+  source: :movie_night
+
   def self.find_by_credentials(user_params)
     test_user = User.find_by_username(user_params[:username])
     return ["Username not found!"] unless test_user

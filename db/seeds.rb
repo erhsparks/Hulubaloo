@@ -1,9 +1,9 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
-User.create(username: 'Guest', password: 'password');
-User.create(username: 'Lizzi', password: 'asdfasdf');
-User.create(username: 'a', password: 'asdfasdf');
+guest = User.create(username: 'Guest', password: 'password');
+me = User.create(username: 'Lizzi', password: 'asdfasdf');
+asdf = User.create(username: 'asdf', password: 'asdfasdf');
 
 action = VideoCategory.create(name: 'action')
 adventure = VideoCategory.create(name: 'adventure')
@@ -12,59 +12,55 @@ animated = VideoCategory.create(name: 'animated')
 scifi = VideoCategory.create(name: 'scifi')
 robots = VideoCategory.create(name: 'robots')
 horror = VideoCategory.create(name: 'horror')
+romance = VideoCategory.create(name: 'romance')
 
-t2 = Video.new(title: 'Terminator 2',
+t2 = Video.create(title: 'Terminator 2',
              description: 'Same Make. Same Model. New Mission.',
              video_url: 'a',
              preview_image_url: 'https://res.cloudinary.com/erhsparks/image/upload/v1478295420/terminator2_cbinaz.jpg')
-t2.save
-t2.categories.push(action, adventure, scifi, robots)
+t2.categories.push(action, scifi, robots)
 
-escape = Video.new(title: 'Escape from New York',
+escape = Video.create(title: 'Escape from New York',
              description: '1997. New York City is a walled maximum security prison. Breaking out is impossible. Breaking in is insane.',
              video_url: 's',
              preview_image_url: 'http://res.cloudinary.com/erhsparks/image/upload/v1478295418/escape_from_ny_oy0cfh.jpg')
-escape.save
 escape.categories.push(action, scifi, comedy)
 
-max = Video.new(title: 'Mad Max: Fury Road',
+max = Video.create(title: 'Mad Max: Fury Road',
              description: 'What a lovely day.',
              video_url: 'd',
              preview_image_url: 'https://res.cloudinary.com/erhsparks/image/upload/v1478295419/max_cxnhhu.jpg')
-max.save
 max.categories.push(action, adventure)
 
-thelma = Video.new(title: 'Thelma and Louise',
+thelma = Video.create(title: 'Thelma and Louise',
              description: 'asdf',
              video_url: 'f',
              preview_image_url: 'https://res.cloudinary.com/erhsparks/image/upload/v1478295419/thelma_louise_pubmpj.jpg')
-thelma.save
-thelma.categories.push(action, adventure)
+thelma.categories.push(action, adventure, romance)
 
-clueless = Video.new(title: 'Clueless',
+clueless = Video.create(title: 'Clueless',
              description: 'WhatEVER.',
              video_url: 'aa',
              preview_image_url: 'https://res.cloudinary.com/erhsparks/image/upload/v1478295418/clueless_bfehko.jpg')
-clueless.save
-clueless.categories.push(comedy, adventure)
+clueless.categories.push(comedy, adventure, romance)
 
-hot_fuzz = Video.new(title: 'Hot Fuzz',
+hot_fuzz = Video.create(title: 'Hot Fuzz',
              description: "They're bad boys. They're die hards. They're lethal weapons. They are...",
              video_url: 'ss',
              preview_image_url: 'https://res.cloudinary.com/erhsparks/image/upload/v1478295418/hot_fuzz_cpmfz8.jpg')
-hot_fuzz.save
 hot_fuzz.categories.push(action, adventure, comedy)
 
-iron_giant = Video.new(title: 'The Iron Giant',
+iron_giant = Video.create(title: 'The Iron Giant',
              description: 'It came from outer space!',
              video_url: 'dd',
              preview_image_url: 'https://res.cloudinary.com/erhsparks/image/upload/v1478295418/iron_giant_nr8gqb.jpg')
-iron_giant.save
 iron_giant.categories.push(animated, scifi, robots)
 
-them = Video.new(title: 'Them!',
+them = Video.create(title: 'Them!',
              description: 'A horror horde of crawl-and-crush giants clawing out of the earth from mile-deep catacombs!',
              video_url: 'ff',
              preview_image_url: 'https://res.cloudinary.com/erhsparks/image/upload/v1478295419/them_obv3h6.jpg')
-them.save
 them.categories.push(action, scifi, horror)
+
+mn = MovieNight.create(host_id: 1, video_id: 1, time: DateTime.new(2016, 11, 9, 13, 0, 0, '-8'))
+mn.participants << me << asdf

@@ -30,15 +30,14 @@ ActiveRecord::Schema.define(version: 20161108190346) do
   add_index "comments", ["showing_id"], name: "index_comments_on_showing_id", using: :btree
 
   create_table "movie_nights", force: :cascade do |t|
-    t.integer  "host_id",                    null: false
-    t.integer  "video_id",                   null: false
+    t.integer  "host_id",                       null: false
+    t.integer  "video_id",                      null: false
     t.string   "title"
-    t.date     "date",                       null: false
-    t.time     "time",                       null: false
-    t.boolean  "active",     default: false, null: false
+    t.datetime "date_and_time",                 null: false
+    t.boolean  "active",        default: false
     t.string   "currency"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   add_index "movie_nights", ["host_id"], name: "index_movie_nights_on_host_id", using: :btree
@@ -52,7 +51,7 @@ ActiveRecord::Schema.define(version: 20161108190346) do
     t.datetime "updated_at",     null: false
   end
 
-  add_index "screenings", ["movie_night_id"], name: "index_screenings_on_movie_night_id", using: :btree
+  add_index "screenings", ["movie_night_id", "viewer_id"], name: "index_screenings_on_movie_night_id_and_viewer_id", unique: true, using: :btree
   add_index "screenings", ["viewer_id"], name: "index_screenings_on_viewer_id", using: :btree
 
   create_table "users", force: :cascade do |t|

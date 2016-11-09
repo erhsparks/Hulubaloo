@@ -24,4 +24,10 @@ class Video < ActiveRecord::Base
   has_many :categories,
   through: :categorizings,
   source: :video_category
+
+  has_many :movie_nights,
+  primary_key: :id,
+  foreign_key: :movie_id,
+  class_name: :MovieNight,
+  dependent: :destroy
 end
