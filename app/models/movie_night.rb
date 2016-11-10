@@ -52,20 +52,25 @@ class MovieNight < ActiveRecord::Base
 
     unsorted_comments.each do |comment|
       parent_id = comment.parent_id || 0
-      time_after_video_start = comment.created_at - self.date_and_time
-      hour, min, sec = find_time_components(time_after_video_start)
-      comment_details = {
-        body: comment.body,
-        username: comment.author.username,
-        hours_in: hour,
-        minutes_in: min,
-        seconds_in: sec,
-        relative_creation_time: time_after_video_start
-      }
+      comment_details = format_details(comment)
       nest[parent_id][comment.id] = comment_details
     end
 
     nest
+  end
+
+  def format_details(comment)
+    time_after_video_start = comment.created_at - self.date_and_time
+    hour, min, sec = find_time_components(time_after_video_start)
+
+    {
+      body: comment.body,
+      username: comment.author.username,
+      hours_in: hour,
+      minutes_in: min,
+      seconds_in: sec,
+      relative_creation_time: time_after_video_start
+    }
   end
 
   def find_time_components(time_after_video_start)
