@@ -1,7 +1,7 @@
 import {
   fetchCategories,
   fetchCategory
-} from '../util/video_api_util';
+} from '../util/category_api_util';
 
 import {
   FETCH_CATEGORIES,
