@@ -1,6 +1,6 @@
 import React from 'react';
 import MastheadContainer from './masthead/masthead_container';
-import { fetchCategories } from '../actions/categories_actions';
+import { fetchCategories } from '../actions/category_actions';
 import FeaturedCategoriesContainer from './categories/featured_categories_container';
 
 const Home = (store) => (

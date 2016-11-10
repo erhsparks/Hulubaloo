@@ -10,7 +10,7 @@ import {
 import {
   fetchCategories,
   fetchCategory
-} from '../actions/categories_actions';
+} from '../actions/category_actions';
 
 import {
   fetchVideo

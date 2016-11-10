@@ -2,7 +2,7 @@ import { merge } from 'lodash';
 import {
   RECEIVE_CATEGORIES,
   RECEIVE_CATEGORY
-} from '../actions/categories_actions';
+} from '../actions/category_actions';
 
 const _defaultCategoryState = {
   id: null,

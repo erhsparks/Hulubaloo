@@ -8,9 +8,9 @@ import {
   FETCH_CATEGORY,
   receiveCategories,
   receiveCategory
-} from '../actions/categories_actions';
+} from '../actions/category_actions';
 
-const CategoriesMiddleware = ({ dispatch }) => next => action => {
+const CategoryMiddleware = ({ dispatch }) => next => action => {
   const fetchError = err => console.log(err.responseJSON);
 
   switch(action.type) {
@@ -27,4 +27,4 @@ const CategoriesMiddleware = ({ dispatch }) => next => action => {
   }
 };
 
-export default CategoriesMiddleware;
+export default CategoryMiddleware;

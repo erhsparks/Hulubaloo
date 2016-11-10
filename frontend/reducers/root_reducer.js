@@ -3,7 +3,7 @@ import SessionReducer from './session_reducer';
 import {
   CategoryReducer,
   CategoriesReducer
-} from './categories_reducer';
+} from './category_reducer';
 import VideoReducer from './video_reducer';
 
 const RootReducer = combineReducers({
