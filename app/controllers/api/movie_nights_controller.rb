@@ -16,7 +16,6 @@ class Api::MovieNightsController < ApplicationController
   def create
     date = movie_night_params[:date].map &:to_i
     time = movie_night_params[:time].map &:to_i
-    debugger
     movie_night = MovieNight.new({
       host_id: current_user.id,
       video_id: movie_night_params[:video_id],
