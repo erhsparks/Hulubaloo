@@ -2,7 +2,7 @@ class Api::CommentsController < ApplicationController
   def index
     current_movie_night =  MovieNight.find(params[:movie_night_id])
     comments = current_movie_night.comments_by_parent
-    render json: comments.to_json
+    render json: comments
   end
 
   def show
@@ -21,11 +21,6 @@ class Api::CommentsController < ApplicationController
   end
 
   private
-  def formatted_comment(comment)
-    formatted = comment.movie_night.format_details(comment)
-    { comment.id => formatted }.to_json
-  end
-
   def comment_params
     params.require(:comment).permit(:body, :movie_night_id, :parent_id)
   end
