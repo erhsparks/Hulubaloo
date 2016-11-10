@@ -44,18 +44,40 @@ class MovieNight < ActiveRecord::Base
   class_name: :Comment,
   inverse_of: :movie_night
 
-  def top_level_comments
-    self.comments.where(parent_id: nil)
-  end
-
-  def nested_comments
-    nested = Hash.new { |h, k| h[k] = [] }
-
-    self.top_level_comments.each do |comment|
-      nested[comment.id] = self.comments.where(parent_id: comment.id)
+  def comments_by_parent
+    unsorted_comments = self.comments
+    nest = Hash.new do |h, k|
+      h[k] = Hash.new
     end
 
-    nested
+    unsorted_comments.each do |comment|
+      parent_id = comment.parent_id || 0
+      time_after_video_start = comment.created_at - self.date_and_time
+      hour, min, sec = find_time_components(time_after_video_start)
+      comment_details = {
+        body: comment.body,
+        username: comment.author.username,
+        hours_in: hour,
+        minutes_in: min,
+        seconds_in: sec,
+        relative_creation_time: time_after_video_start
+      }
+      nest[parent_id][comment.id] = comment_details
+    end
+
+    nest
+  end
+
+  def find_time_components(time_after_video_start)
+    seconds = time_after_video_start
+    minutes = seconds / 60
+    hours = minutes / 60
+
+    hours_in = hours.floor
+    minutes_in = minutes.floor % 60
+    seconds_in = seconds.floor % 60
+
+    [hours_in, minutes_in, seconds_in]
   end
 
   def set_title
