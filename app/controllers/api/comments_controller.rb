@@ -7,14 +7,15 @@ class Api::CommentsController < ApplicationController
 
   def show
     comment = Comment.find(params[:id])
-    render json: formatted_comment(comment)
+    render json: comment.format_details
   end
 
   def create
     comment = current_user.authored_comments.new(comment_params)
+    comments_movie_night = comment.movie_night
 
     if comment.save
-      render json: formatted_comment(comment)
+      render json: comment.format_details
     else
       render json: comment.errors.full_messages, status: 422
     end

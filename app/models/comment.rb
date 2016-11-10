@@ -35,4 +35,33 @@ class Comment < ActiveRecord::Base
   primary_key: :id,
   foreign_key: :parent_id,
   class_name: :Comment
+
+  def format_details
+    movie_night_start = self.movie_night.date_and_time
+    time_after_video_start = self.created_at - movie_night_start
+    hour, min, sec = find_time_components(time_after_video_start)
+
+    {
+      self.id => {
+        body: self.body,
+        username: self.author.username,
+        hours_in: hour,
+        minutes_in: min,
+        seconds_in: sec,
+        relative_creation_time: time_after_video_start
+      }
+    }
+  end
+
+  def find_time_components(time_after_video_start)
+    seconds = time_after_video_start
+    minutes = seconds / 60
+    hours = minutes / 60
+
+    hours_in = hours.floor
+    minutes_in = minutes.floor % 60
+    seconds_in = seconds.floor % 60
+
+    [hours_in, minutes_in, seconds_in]
+  end
 end

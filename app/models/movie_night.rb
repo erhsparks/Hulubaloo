@@ -44,6 +44,18 @@ class MovieNight < ActiveRecord::Base
   class_name: :Comment,
   inverse_of: :movie_night
 
+  def formatted
+    {
+      self.id => {
+        host: self.host.username,
+        title: self.title,
+        active: self.active,
+        currency: self.active,
+        video_id: self.video_id
+      }
+    }
+  end
+
   def comments_by_parent
     unsorted_comments = self.comments
     nest = Hash.new do |h, k|
@@ -52,39 +64,11 @@ class MovieNight < ActiveRecord::Base
 
     unsorted_comments.each do |comment|
       parent_id = comment.parent_id || 0
-      comment_details = format_details(comment)
+      comment_details = comment.format_details
       nest[parent_id].merge!(comment_details)
     end
 
     nest
-  end
-
-  def format_details(comment)
-    time_after_video_start = comment.created_at - self.date_and_time
-    hour, min, sec = find_time_components(time_after_video_start)
-
-    {
-      comment.id => {
-        body: comment.body,
-        username: comment.author.username,
-        hours_in: hour,
-        minutes_in: min,
-        seconds_in: sec,
-        relative_creation_time: time_after_video_start
-      }
-    }
-  end
-
-  def find_time_components(time_after_video_start)
-    seconds = time_after_video_start
-    minutes = seconds / 60
-    hours = minutes / 60
-
-    hours_in = hours.floor
-    minutes_in = minutes.floor % 60
-    seconds_in = seconds.floor % 60
-
-    [hours_in, minutes_in, seconds_in]
   end
 
   def set_title
