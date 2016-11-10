@@ -11,13 +11,13 @@ import {
   fetchMovieNights,
   fetchMovieNight,
   createMovieNight
-} from './util/movie_night_api_util';
+} from './actions/movie_night_actions';
 
 import {
   fetchComments,
   fetchComment,
-  postComment
-} from './util/comment_api_util';
+  createComment
+} from './actions/comment_actions';
 // end testing
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -33,20 +33,20 @@ document.addEventListener('DOMContentLoaded', () => {
   window.onscroll = () => toggleHeaderBkg();
 
   // this commit only; for testing
-  window.fetchMovieNights = fetchMovieNights;
-  window.fetchMovieNight = fetchMovieNight;
-  window.createMovieNight = createMovieNight;
-  window.fetchComments = fetchComments;
-  window.fetchComment = fetchComment;
-  window.postComment = postComment;
-  window.success = data => console.log(data);
-  window.error = data => console.log(data);
+  window.fetchMovieNights = () => store.dispatch(fetchMovieNights());
+  window.fetchMovieNight = id => store.dispatch(fetchMovieNight(id));
+  window.createMovieNight = newMN => store.dispatch(createMovieNight(newMN));
+  window.fetchComments = mNId => store.dispatch(fetchComments(mNId));
+  window.fetchComment = id => store.dispatch(fetchComment(id));
+  window.createComment = newComment => store.dispatch(createComment(newComment));
+
   window.topLevelComment = {
     comment: {
       body: 'wow!',
       movie_night_id: 1
     }
   };
+
   window.nestedComment = {
     comment: {
       body: 'wow!',
@@ -54,12 +54,16 @@ document.addEventListener('DOMContentLoaded', () => {
       parent_id: 1
     }
   };
+
   window.movieNight = {
     movie_night: {
-      video_id: 2,
+      video_id: 3,
       date: [2016, 11, 10],
-      time: [18, 50] // time here is in UST, form will have a timezone dropdown
+      time: [22, 45] // time here is in UST, form will have a timezone dropdown
     }
   };
+
+  window.store = store;
+  window.getState = store.getState;
   // end testing
 });

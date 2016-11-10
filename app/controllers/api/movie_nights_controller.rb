@@ -7,7 +7,7 @@ class Api::MovieNightsController < ApplicationController
   def show
     movie_night = MovieNight.find(params[:id])
     if current_user.viewed_movie_nights.include?(movie_night)
-      render json: movie_night.formatted
+      render json: movie_night.formatted_for_viewing
     else
       render json: 'You are not a part of this movie night'
     end
@@ -23,7 +23,7 @@ class Api::MovieNightsController < ApplicationController
     })
 
     if movie_night.save
-      render json: movie_night.formatted
+      render json: movie_night.formatted_for_collection
     else
       render json: movie_night.errors.full_messages, status: 422
     end
@@ -33,7 +33,7 @@ class Api::MovieNightsController < ApplicationController
   def format_collection(movie_nights)
     formatted_collection = {}
     movie_nights.each do |movie_night|
-      movie_night_details = movie_night.formatted
+      movie_night_details = movie_night.formatted_for_collection
       formatted_collection.merge!(movie_night_details)
     end
 

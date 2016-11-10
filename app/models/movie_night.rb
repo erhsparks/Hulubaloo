@@ -44,15 +44,24 @@ class MovieNight < ActiveRecord::Base
   class_name: :Comment,
   inverse_of: :movie_night
 
-  def formatted
+  def formatted_for_collection
     {
       self.id => {
         host: self.host.username,
         title: self.title,
         active: self.active,
-        currency: self.currency,
-        video_id: self.video_id
+        currency: self.currency
       }
+    }
+  end
+
+  def formatted_for_viewing
+    {
+      host: self.host.username,
+      title: self.title,
+      active: self.active,
+      currency: self.currency,
+      video_id: self.video_id
     }
   end
 
@@ -65,7 +74,7 @@ class MovieNight < ActiveRecord::Base
     unsorted_comments.each do |comment|
       parent_id = comment.parent_id || 0
       comment_details = comment.format_details
-      nest[parent_id].merge!(comment_details)
+      nest[parent_id].merge!(comment_details[parent_id])
     end
 
     nest
