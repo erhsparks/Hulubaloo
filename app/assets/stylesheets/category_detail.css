@@ -11,12 +11,24 @@
   justify-content: center;
 }
 
+subheader.category-header {
+  background: rgba(225,225,225,0.95);
+}
+
 .category-header h1 {
   text-transform: uppercase;
   font-weight: 200;
   font-size: 26px;
   color: #666666;
   padding: 4px 0px 0px 1px;
+}
+
+.category-header h2 {
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 24px;
+  color: #666666;
+  padding: 3px 0px 0px 1px;
 }
 
 .all-categories .featured-categories-row {

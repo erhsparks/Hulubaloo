@@ -1,6 +1,26 @@
-import { merge } from 'lodash';
+import {
+  merge,
+  values
+} from 'lodash';
 
-export const rowsOfFour = (videosArray) => {
+export const sortByCurrency = movieNights => {
+  movieNights = values(movieNights);
+
+  let sorted = {
+    past: [],
+    upcoming: []
+  };
+
+  movieNights.forEach(movieNight => {
+    if (movieNight.currency === 'past') {
+      sorted.past.push(movieNight);
+    } else sorted.upcoming.push(movieNight);
+  });
+
+  return sorted;
+};
+
+export const rowsOfFour = videosArray => {
   Object.freeze(videosArray);
   let fours = videosArray.slice(0);
   let placeholder = {

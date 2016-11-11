@@ -16,11 +16,22 @@ import {
   fetchVideo
 } from '../actions/video_actions';
 
+import {
+  fetchMovieNights,
+  fetchMovieNight
+} from '../actions/movie_night_actions';
+
+import {
+  fetchComments
+} from '../actions/comment_actions';
+
 import App from './app.jsx';
 import Home from './home.jsx';
-import CategoryDetailContainer from './categories/detail/category_detail_container';
 import AllCategories from './categories/index/all_categories';
+import CategoryDetailContainer from './categories/detail/category_detail_container';
 import VideoDetailContainer from './videos/video_detail_container';
+import MovieNightIndexContainer from './movie_nights/index/movie_night_index_container';
+import MovieNightContainer from './movie_nights/watch/movie_night_container';
 import { About } from './footer/links/about';
 import { Jobs } from './footer/links/jobs';
 import { Disclaimer } from './footer/links/disclaimer';
@@ -28,16 +39,33 @@ import { Terms } from './footer/links/terms';
 import { Privacy } from './footer/links/privacy';
 
 const Root = ({ store }) => {
+  const dispatch = store.dispatch;
+
+  const loadVideo = nextState => {
+    dispatch(fetchVideo(nextState.params.videoId));
+  };
+
   const loadCategories = () => {
-    store.dispatch(fetchCategories());
+    dispatch(fetchCategories());
   };
 
   const loadCategory = nextState => {
-    store.dispatch(fetchCategory(nextState.params.categoryName));
+    dispatch(fetchCategory(nextState.params.categoryName));
   };
 
-  const loadVideo = nextState => {
-    store.dispatch(fetchVideo(nextState.params.videoId));
+  const loadMovieNights = (nextState, replace) => {
+    loggedOutRedirect(replace);
+    dispatch(fetchMovieNights());
+  };
+
+  const loadMovieNightAndComments = (nextState, replace) => {
+    loggedOutRedirect(replace);
+    dispatch(fetchMovieNight(nextState));
+    dispatch(fetchComments(nextState));
+  };
+
+  const loggedOutRedirect = replace => {
+    if (!store.getState().session.currentUser) replace('/');
   };
 
   return (
@@ -45,12 +73,22 @@ const Root = ({ store }) => {
       <Router history={hashHistory}>
         <Route path='/' component={App}>
           <IndexRoute component={Home} onEnter={loadCategories} />
-          <Route path='watch/:videoId'
-            component={VideoDetailContainer} onEnter={loadVideo} />
+
           <Route path='categories'
             component={AllCategories} onEnter={loadCategories} />
+
           <Route path='categories/:categoryName'
             component={CategoryDetailContainer} onEnter={loadCategory} />
+
+          <Route path='watch/:videoId'
+            component={VideoDetailContainer} onEnter={loadVideo} />
+
+          <Route path='movie-nights'
+            component={MovieNightIndexContainer} onEnter={loadMovieNights} />
+
+          <Route path='movie-nights/:movieNightId'
+            component={MovieNightContainer} onEnter={loadMovieNightAndComments} />
+
           <Route path='about' component={About} />
           <Route path='jobs' component={Jobs} />
           <Route path='disclaimer' component={Disclaimer} />

@@ -11,7 +11,6 @@ const _defaultMovieNightState = {
   host: '',
   title: '',
   active: false,
-  currency: '',
   video_id: null
 };
 

@@ -50,7 +50,8 @@ class MovieNight < ActiveRecord::Base
         host: self.host.username,
         title: self.title,
         active: self.active,
-        currency: self.currency
+        currency: self.currency,
+        preview_image_url: self.video.preview_image_url
       }
     }
   end
@@ -60,7 +61,6 @@ class MovieNight < ActiveRecord::Base
       host: self.host.username,
       title: self.title,
       active: self.active,
-      currency: self.currency,
       video_id: self.video_id
     }
   end

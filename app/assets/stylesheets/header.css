@@ -6,6 +6,14 @@ header {
   align-items: center;
 }
 
+subheader {
+  width: 100%;
+  height: 45px;
+  font-size: 15px;
+  font-weight: normal;
+  align-items: center;
+}
+
 .global-header {
   display: flex;
   position: fixed;

@@ -1,0 +1,36 @@
+.movie-night-index {
+  padding-top: 59px;
+}
+
+.mn-index-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.mn-index-item {
+  display: flex;
+  margin: 10px auto;
+}
+.mn-index-item a {
+  display: flex;
+  flex-direction: row;
+}
+
+.mn-index-item a * {
+  margin: 5px;
+}
+
+.mn-index-item-image {
+  width: 165px;
+  height: 238px;
+  border: 2px solid #FFF;
+}
+
+.movie-night-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-night-detail * {
+  color: #000;
+}
