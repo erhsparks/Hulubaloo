@@ -58,11 +58,14 @@ class MovieNight < ActiveRecord::Base
   end
 
   def formatted_for_viewing
+    usernames = self.participants.map &:username
+    debugger
     {
       host: self.host.username,
       title: self.title,
       active: self.active,
-      video_id: self.video_id
+      video_id: self.video_id,
+      participants: usernames
     }
   end
 

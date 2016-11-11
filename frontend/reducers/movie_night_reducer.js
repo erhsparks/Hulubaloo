@@ -11,7 +11,8 @@ const _defaultMovieNightState = {
   host: '',
   title: '',
   active: false,
-  video_id: null
+  video_id: null,
+  participants: []
 };
 
 export const MovieNightsReducer = (state = _defaultMovieNightsState, action) => {
