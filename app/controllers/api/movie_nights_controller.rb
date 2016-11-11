@@ -23,6 +23,10 @@ class Api::MovieNightsController < ApplicationController
     })
 
     if movie_night.save
+      participants = movie_night_params.participant_names
+      participants.map! { |name| User.find_by_username(name) }
+      movie_night.participants |= participants
+      
       render json: movie_night.formatted_for_collection
     else
       render json: movie_night.errors.full_messages, status: 422
@@ -41,6 +45,6 @@ class Api::MovieNightsController < ApplicationController
   end
 
   def movie_night_params
-    params.require(:movie_night).permit(:video_id, date: [], time: [])
+    params.require(:movie_night).permit(:video_id, date: [], time: [], participant_names: [])
   end
 end
