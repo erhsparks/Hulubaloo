@@ -19,6 +19,7 @@ import {
 import App from './app.jsx';
 import Home from './home.jsx';
 import CategoryDetailContainer from './categories/category_detail_container';
+import AllCategories from './categories/all_categories';
 import VideoDetailContainer from './videos/video_detail_container';
 import { About } from './footer/about';
 import { Jobs } from './footer/jobs';
@@ -35,7 +36,7 @@ const Root = ({ store }) => {
     store.dispatch(fetchCategory(nextState.params.categoryName));
   };
 
-  const loadVideo = (nextState, replace) => {
+  const loadVideo = nextState => {
     store.dispatch(fetchVideo(nextState.params.videoId));
   };
 
@@ -50,7 +51,8 @@ const Root = ({ store }) => {
           <Route path='disclaimer' component={Disclaimer} />
           <Route path='terms' component={Terms} />
           <Route path='privacy' component={Privacy} />
-          <Route path=':categoryName' component={CategoryDetailContainer} onEnter={loadCategory} />
+          <Route path='categories/:categoryName' component={CategoryDetailContainer} onEnter={loadCategory} />
+          <Route path='categories' component={AllCategories} onEnter={loadCategories} />
         </Route>
       </Router>
     </Provider>

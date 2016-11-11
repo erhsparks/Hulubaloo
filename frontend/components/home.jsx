@@ -1,13 +1,14 @@
 import React from 'react';
 import MastheadContainer from './masthead/masthead_container';
-import { fetchCategories } from '../actions/category_actions';
 import FeaturedCategoriesContainer from './categories/featured_categories_container';
 
-const Home = (store) => (
+const Home = () => (
   <div className='hulubaloo-home-content'>
     <MastheadContainer />
+
     <FeaturedCategoriesContainer />
-    <nav className='video-categories'></nav>
+
+    <nav className='video-categories'/>
   </div>
 );
 

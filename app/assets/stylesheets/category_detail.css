@@ -1,4 +1,5 @@
-.category-detail {
+.category-detail,
+.all-categories {
   padding-top: 59px;
 }
 
@@ -16,4 +17,8 @@
   font-size: 26px;
   color: #666666;
   padding: 4px 0px 0px 1px;
+}
+
+.all-categories .featured-categories-row {
+  margin-top: 10px;
 }

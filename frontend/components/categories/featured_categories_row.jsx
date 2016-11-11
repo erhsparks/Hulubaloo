@@ -10,19 +10,29 @@ const FeaturedCategoriesRow = ({ category }) => {
   return (
     <li className='featured-categories-row'>
       <h1>
-        <Link to={`${category.name}`}>
+        <Link to={`categories/${category.name}`}>
           {category.name}
           <span className='carrot'>
-            &nbsp;&gt;
+            〉
           </span>
         </Link>
       </h1>
 
-      <ul className='featured-categories-videos'>
-        {row.map(video => (
-          <CategoryVideo key={video.id} video={video} />
-        ))}
-      </ul>
+      <span className='featured-categories-videos-container'>
+        <ul className='featured-categories-videos'>
+          {row.map(video => (
+            <CategoryVideo key={video.id} video={video} />
+          ))}
+        </ul>
+
+        <h1>
+          <Link to={`categories/${category.name}`}>
+            <span className='carrot-large'>
+              〉
+            </span>
+          </Link>
+        </h1>
+      </span>
     </li>
   );
 };
