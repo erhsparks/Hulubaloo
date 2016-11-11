@@ -42,18 +42,23 @@ class Comment < ActiveRecord::Base
     time_after_video_start = self.created_at - movie_night_start
     hour, min, sec = find_time_components(time_after_video_start)
 
-    {
-      parent_id => {
-        self.id => {
-          body: self.body,
-          username: self.author.username,
-          hours_in: hour,
-          minutes_in: min,
-          seconds_in: sec,
-          relative_creation_time: time_after_video_start
-        }
-      }
+    formatted = {
+      id: self.id,
+      parent_id: parent_id,
+      body: self.body,
+      username: self.author.username,
+      hours_in: hour,
+      minutes_in: min,
+      seconds_in: sec,
+      relative_creation_time: time_after_video_start,
+      children: []
     }
+
+    self.children.each do |child|
+      formatted[:children] << child.format_details
+    end
+
+    formatted
   end
 
   def find_time_components(time_after_video_start)

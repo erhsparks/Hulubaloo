@@ -59,7 +59,6 @@ class MovieNight < ActiveRecord::Base
 
   def formatted_for_viewing
     usernames = self.participants.map &:username
-    debugger
     {
       host: self.host.username,
       title: self.title,
@@ -70,15 +69,11 @@ class MovieNight < ActiveRecord::Base
   end
 
   def comments_by_parent
-    unsorted_comments = self.comments
-    nest = Hash.new do |h, k|
-      h[k] = Hash.new
-    end
+    parent_comments = self.comments.where(parent_id: nil)
+    nest = {}
 
-    unsorted_comments.each do |comment|
-      parent_id = comment.parent_id || 0
-      comment_details = comment.format_details
-      nest[parent_id].merge!(comment_details[parent_id])
+    parent_comments.each do |comment|
+      nest[comment.id] = comment.format_details
     end
 
     nest

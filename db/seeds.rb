@@ -65,7 +65,8 @@ them = Video.create(title: 'Them!',
              preview_image_url: 'https://res.cloudinary.com/erhsparks/image/upload/v1478295419/them_obv3h6.jpg')
 them.categories.push(action, scifi, horror)
 
-mn1 = MovieNight.create(host_id: 1, video_id: 1, date_and_time: DateTime.new(2016, 11, 11, 13, 0, 0, '-8'))
+mn1_start = DateTime.new(2016, 11, 11, 13, 0, 0, '-8')
+mn1 = MovieNight.create(host_id: 1, video_id: 1, date_and_time: mn1_start)
 mn1.participants << me << asdf
 
 mn2 = MovieNight.create(host_id: 2, video_id: 5, date_and_time: DateTime.new(2016, 11, 15, 14, 45, 0, '-8'))
@@ -73,3 +74,9 @@ mn2.participants << guest << asdf
 
 mn3 = MovieNight.create(host_id: 1, video_id: 4, date_and_time: DateTime.new(2016, 11, 26, 19, 45, 0, '-8'))
 mn3.participants << me << asdf
+
+c1 = guest.authored_comments.create(movie_night_id: mn1.id, body: "Can't wait for the movie to start!", created_at: mn1_start + 5.seconds)
+c2 = guest.authored_comments.create(movie_night_id: mn1.id, body: 'wow!', created_at: mn1_start + 65.seconds)
+c3 = me.authored_comments.create(movie_night_id: mn1.id, body: 'I know, right?!', parent_id: c2.id, created_at: c2.created_at + 4.seconds )
+c4 = me.authored_comments.create(movie_night_id: mn1.id, body: 'love this movie', created_at: mn1_start + 191.seconds)
+c5 = asdf.authored_comments.create(movie_night_id: mn1.id, body: 'so exciting!', created_at: mn1_start + 231.seconds)
