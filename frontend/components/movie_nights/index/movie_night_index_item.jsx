@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const MovieNightIndexItem = ({ movieNight, host }) => (
   <li className='mn-index-item'>
-    <Link to={`movieNight/${movieNight.id}`} >
+    <Link to={`movie-nights/${movieNight.id}`} >
       <img className='mn-index-item-image'
         src={movieNight.preview_image_url}
         alt={`Poster for ${movieNight.title}`} />

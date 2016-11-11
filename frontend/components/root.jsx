@@ -59,12 +59,12 @@ const Root = ({ store }) => {
 
   const loadMovieNightAndComments = (nextState, replace) => {
     loggedOutRedirect(replace);
-    dispatch(fetchMovieNight(nextState));
-    dispatch(fetchComments(nextState));
+    dispatch(fetchMovieNight(nextState.params.movieNightId));
+    dispatch(fetchComments(nextState.params.movieNightId));
   };
 
   const loggedOutRedirect = replace => {
-    if (!store.getState().session.currentUser) replace('/');
+    if (!store.getState().session.currentUser) setTimeout(() => replace('/'), 6000);
   };
 
   return (
