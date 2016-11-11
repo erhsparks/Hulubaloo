@@ -47,6 +47,7 @@ class MovieNight < ActiveRecord::Base
   def formatted_for_collection
     {
       self.id => {
+        id: self.id,
         host: self.host.username,
         title: self.title,
         active: self.active,

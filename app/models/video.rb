@@ -13,7 +13,6 @@
 
 class Video < ActiveRecord::Base
   validates :title, :description, :preview_image_url, presence: true
-  validates :video_url, presence: true, uniqueness: true
 
   has_many :categorizings,
   primary_key: :id,
