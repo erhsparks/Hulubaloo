@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
-import createComment from '../../../actions/comment_actions';
+import { createComment } from '../../../../actions/comment_actions';
 import CommentForm from './comment_form';
 
-const mapStateToProps = ({ video }) => ({
-  videoId: video.id
+const mapStateToProps = ({ movieNight }) => ({
+  movieNightId: movieNight.id
 });
 
 const mapDispatchToProps = dispatch => ({
-  createComment: movieNight => dispatch(createComment(movieNight))
+  createComment: comment => dispatch(createComment(comment))
 });
 
 export default connect(

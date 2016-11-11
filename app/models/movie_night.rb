@@ -60,6 +60,7 @@ class MovieNight < ActiveRecord::Base
   def formatted_for_viewing
     usernames = self.participants.map &:username
     {
+      id: self.id,
       host: self.host.username,
       title: self.title,
       active: self.active,

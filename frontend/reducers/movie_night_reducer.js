@@ -8,6 +8,7 @@ import {
 const _defaultMovieNightsState = {};
 
 const _defaultMovieNightState = {
+  id: null,
   host: '',
   title: '',
   active: false,

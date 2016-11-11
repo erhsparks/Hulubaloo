@@ -1,5 +1,6 @@
 import React from 'react';
 import Comment from './comment';
+import CommentFormContainer from './comment_form_container';
 
 class Comments extends React.Component {
   constructor(props) {
@@ -11,7 +12,8 @@ class Comments extends React.Component {
     let me = this.props.currentUsername;
 
     return (
-      <aside className='comments'>
+      <aside className='comments'
+        style={{maxHeight: `${$('.masthead').height() + $('.video-info').height() + 69}px`}}>
         <header className='category-header'>
           <h1>
             Comments
@@ -19,27 +21,33 @@ class Comments extends React.Component {
         </header>
 
         <ul className='top-level-comments'>
-          {parentComments.map(parentComment => (
-            <li key={parentComment.id}
-              className='top-level-comment'>
+          <li key='form' className='top-level-comment-form'>
+            <CommentFormContainer />
+          </li>
 
-              <Comment key={parentComment.id}
-                comment={parentComment}
-                me={me} />
+          <div className='scrolly-box'>
+            {parentComments.map(parentComment => (
+              <li key={parentComment.id}
+                className='top-level-comment'>
 
-              <ul className='children'>
-                {parentComment.children.map(childComment => (
-                  <li key={parentComment.id}
-                    className='child-comment'>
+                <Comment comment={parentComment} me={me} />
 
-                    <Comment key={childComment.id}
-                      comment={childComment}
-                      me={me} />
-                  </li>
-                  ))}
-              </ul>
-            </li>
-          ))}
+                <ul className='children'>
+                  {parentComment.children.map(childComment => (
+                    <li key={childComment.id}
+                      className='child-comment'>
+
+                      <Comment comment={childComment} me={me} />
+                    </li>
+                    ))}
+
+                    <li key='form' className='nested-comment-form'>
+                      <CommentFormContainer parentId={parentComment.id} />
+                    </li>
+                </ul>
+              </li>
+            ))}
+          </div>
         </ul>
       </aside>
     );
