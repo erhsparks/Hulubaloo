@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { rowsOfFour } from '../../reducers/selectors_and_transformers';
-import CategoryVideo from './category_video';
+import { rowsOfFour } from '../../../reducers/selectors_and_transformers';
+import CategoryVideo from '../detail/category_video';
 
 const FeaturedCategoriesRow = ({ category }) => {
   let videos = category.videos;

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { AboutLink } from './about';
-import { MailtoLinkLi } from './mailto_link';
-import { JobsLink } from './jobs';
-import { MyGithub, HulubalooGithub } from './github_links';
-import { DisclaimerLink } from './disclaimer';
-import { TermsLink } from './terms';
-import { PrivacyLink } from './privacy';
+import { AboutLink } from './links/about';
+import { MailtoLinkLi } from './links/mailto_link';
+import { JobsLink } from './links/jobs';
+import { MyGithub, HulubalooGithub } from './links/github_links';
+import { DisclaimerLink } from './links/disclaimer';
+import { TermsLink } from './links/terms';
+import { PrivacyLink } from './links/privacy';
 
 export default () => (
   <footer>
