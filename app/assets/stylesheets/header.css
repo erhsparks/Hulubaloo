@@ -60,15 +60,21 @@ subheader {
 .user-dropdown {
   display: flex;
   flex-direction: column;
+  padding: 12px 0;
 }
 
 .user-dropdown > a {
   padding: 6px 0px 8px;
 }
 
+.user-dropdown > div {
+  display: none;
+  position: absolute;
+  top: 50px;
+}
+
 .user-dropdown-items {
   font-size: 13px;
-  visibility: hidden;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -90,8 +96,8 @@ subheader {
   color: #66AA33;
 }
 
-.user-dropdown:hover .user-dropdown-items {
-  visibility: visible;
+.user-dropdown:hover * {
+  display: inherit;
 }
 
 .user-menu a {
