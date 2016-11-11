@@ -49,6 +49,14 @@ subheader {
   align-items: center;
 }
 
+.user-menu > li:first-child {
+  margin-left: 0;
+}
+
+.user-menu > li > a {
+  text-transform: uppercase;
+}
+
 .user-dropdown {
   display: flex;
   flex-direction: column;
@@ -61,6 +69,7 @@ subheader {
 .user-dropdown-items {
   font-size: 13px;
   visibility: hidden;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,7 +82,7 @@ subheader {
 }
 
 .user-dropdown-items > li {
-  margin: auto;
+  margin: 5px auto;
   justify-content: center;
 }
 
