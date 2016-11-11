@@ -4,7 +4,7 @@ import MovieNightIndex from './movie_night_index';
 
 const mapStateToProps = ({ movieNights, session }) => ({
   movieNights: sortByCurrency(movieNights),
-  currentUsername: session.currentUser.username
+  currentUser: session.currentUser
 });
 
 export default connect(

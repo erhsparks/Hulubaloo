@@ -2,6 +2,20 @@
   padding-top: 59px;
 }
 
+.logged-out .logged-out-roadblock {
+  margin: auto;
+}
+
+.logged-out .logged-out-roadblock h1,
+.logged-out .logged-out-roadblock p {
+  color: #666666;
+}
+
+.logged-out .logged-out-roadblock h1 {
+  text-shadow: none;
+  margin-top: 6%;
+}
+
 .mn-index-section {
   display: flex;
   flex-direction: column;

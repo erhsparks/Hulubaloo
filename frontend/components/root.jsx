@@ -53,8 +53,7 @@ const Root = ({ store }) => {
     dispatch(fetchCategory(nextState.params.categoryName));
   };
 
-  const loadMovieNights = (nextState, replace) => {
-    loggedOutRedirect(replace);
+  const loadMovieNights = () => {
     dispatch(fetchMovieNights());
   };
 
