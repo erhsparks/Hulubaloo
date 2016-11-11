@@ -3,6 +3,13 @@ import RoadblockButtonsContainer from '../../videos/roadblock_buttons_container'
 import MovieNightIndexItem from './movie_night_index_item';
 
 const MovieNightIndex = ({ movieNights, currentUser }) => {
+  // need to make this a class extending React.Component and call the below on componentDidUpdate:
+  // const checkForUserChange = (prevState, nextState) => {
+  //   if (prevState.session.currentUser.id !== nextState.session.currentUser.id) {
+  //     loadMovieNights();
+  //   }
+  // };
+
   if (currentUser) {
     const makeEntry = (movieNight, i) => {
       let hosted = (currentUser.username === movieNight.host ? true : false);
