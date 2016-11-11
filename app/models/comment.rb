@@ -70,6 +70,12 @@ class Comment < ActiveRecord::Base
     minutes_in = minutes.floor % 60
     seconds_in = seconds.floor % 60
 
-    [hours_in, minutes_in, seconds_in]
+    [hours_in.to_s, padded(minutes_in), padded(seconds_in)]
+  end
+
+  def padded(time_integer)
+    time = time_integer.to_s
+
+    (time.length == 1) ? "0#{time}" : time
   end
 end

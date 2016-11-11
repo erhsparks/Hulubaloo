@@ -1,0 +1,20 @@
+.movie-night {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.movie-night .video-detail {
+  width: 75%;
+}
+
+.movie-night .video-in-mast {
+  width: 100%;
+  margin: auto 10px;
+}
+
+.movie-night .video-info {
+  padding-left: 10px;
+  justify-content: flex-start;
+}

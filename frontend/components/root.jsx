@@ -64,7 +64,8 @@ const Root = ({ store }) => {
   };
 
   const loggedOutRedirect = replace => {
-    if (!store.getState().session.currentUser) setTimeout(() => replace('/'), 6000);
+    // if (!store.getState().session.currentUser) setTimeout(() => replace('/'), 6000);
+    if (!store.getState().session.currentUser) replace('/');
   };
 
   return (

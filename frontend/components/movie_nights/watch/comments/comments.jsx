@@ -8,12 +8,15 @@ class Comments extends React.Component {
 
   render () {
     let parentComments = this.props.comments;
+    let me = this.props.currentUsername;
 
     return (
       <aside className='comments'>
-        <h1>
-          Comments
-        </h1>
+        <header className='category-header'>
+          <h1>
+            Comments
+          </h1>
+        </header>
 
         <ul className='top-level-comments'>
           {parentComments.map(parentComment => (
@@ -21,15 +24,17 @@ class Comments extends React.Component {
               className='top-level-comment'>
 
               <Comment key={parentComment.id}
-                comment={parentComment} />
+                comment={parentComment}
+                me={me} />
 
               <ul className='children'>
                 {parentComment.children.map(childComment => (
                   <li key={parentComment.id}
                     className='child-comment'>
-                    
+
                     <Comment key={childComment.id}
-                      comment={childComment} />
+                      comment={childComment}
+                      me={me} />
                   </li>
                   ))}
               </ul>

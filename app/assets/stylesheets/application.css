@@ -43,7 +43,7 @@ a:hover {
   cursor: pointer;
 }
 
-a:not(.fake-button):hover * {
+a:not(.fake-button):hover {
   color: #66AA33;
 }
 

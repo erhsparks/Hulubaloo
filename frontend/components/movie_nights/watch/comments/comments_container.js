@@ -7,7 +7,8 @@ import {
 } from '../../../../actions/comment_actions';
 import Comments from './comments';
 
-const mapStateToProps = ({ comments }) => ({
+const mapStateToProps = ({ session, comments }) => ({
+  currentUsername: session.currentUser.username,
   comments: values(comments).reverse()
 });
 

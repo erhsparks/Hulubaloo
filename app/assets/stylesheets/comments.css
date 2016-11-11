@@ -1,0 +1,98 @@
+.comments {
+  padding-top: 59px;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  background: #3c3c3c;
+}
+
+.comments .category-header {
+  min-width: auto;
+  width: auto;
+  background: RGBa(19, 19, 19, 0.95);
+  border-bottom: 1px solid #585858;
+}
+
+.comments .category-header h1 {
+  width: 90%;
+  align-self: center;
+  text-align: left;
+}
+
+.top-level-comments {
+  overflow-y: scroll;
+  margin: 3px;
+}
+
+.top-level-comments * {
+  font-weight: 200;
+}
+
+.top-level-comments h2 {
+  text-transform: uppercase;
+}
+
+.top-level-comments .timestamp {
+  color: #66AA33;
+}
+
+.top-level-comment {
+  .margin-left: 10px;
+}
+
+.top-level-comment .comment-head * {
+  margin-right: 6px;
+}
+
+.top-level-comment h2 {
+  font-size: 24px;
+}
+
+.top-level-comment p {
+  font-size: 18px;
+}
+
+.children {
+  margin-left: 10px;
+}
+
+.child-comment {
+  margin-left: 5px;
+}
+
+.child-comment .comment-head * {
+  margin-right: 4px;
+}
+
+.child-comment h2 {
+  font-size: 20px;
+}
+
+.child-comment p {
+  font-size: 14px;
+}
+
+.comment-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.comment:hover .comment-head * {
+  color: #66AA33;
+}
+
+.comment {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  margin: 4px;
+  background: #2b560b;
+  padding: 3px 4px;
+}
+
+.comment.me {
+  /*background: #A94F18;
+  background: #ab4e15;*/
+  background: #555555;
+}
