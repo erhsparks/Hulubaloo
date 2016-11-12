@@ -131,7 +131,7 @@ Additional features to implement.
 
 ![IMAGE OF COMMENT MOUSEOVER] (docs/snaps/comment_mouseover.png)
 
-You may notice that mousing over a comment highlights it link green. You may also note that comment post time is displayed in time since movie night start. In future, I plan to tie the comment post time to the video timestamps, so that after the movie night has ended (`active: true`), clicking a comment will take you to that point in the video. This requires more access to Vimeo's video controls than their basic API allows, but their developer API will.
+You may notice that mousing over a comment highlights it link green. You may also have noticed that comment post time is displayed in time since movie night start. In future, I plan to tie the comment post time to the video timestamps, so that after the movie night has ended (`active: false`), clicking a comment will take you to that point in the video. This requires more access to Vimeo's video controls than their basic API allows, but their developer API will.
 
 ### Watchlist
 
