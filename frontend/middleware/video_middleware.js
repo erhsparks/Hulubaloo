@@ -8,12 +8,10 @@ import {
 } from '../actions/video_actions';
 
 const VideoMiddleware = ({ dispatch }) => next => action => {
-  const fetchError = err => console.log(err.responseJSON);
-
   switch(action.type) {
     case FETCH_VIDEO:
       const singleVideoSuccess = video => dispatch(receiveVideo(video));
-      fetchVideo(action.id, singleVideoSuccess, fetchError);
+      fetchVideo(action.id, singleVideoSuccess);
       return next(action);
     default:
       return next(action);

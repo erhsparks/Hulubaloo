@@ -11,16 +11,14 @@ import {
 } from '../actions/category_actions';
 
 const CategoryMiddleware = ({ dispatch }) => next => action => {
-  const fetchError = err => console.log(err.responseJSON);
-
   switch(action.type) {
     case FETCH_CATEGORIES:
       const categoriesSuccess = categories => dispatch(receiveCategories(categories));
-      fetchCategories(categoriesSuccess, fetchError);
+      fetchCategories(categoriesSuccess);
       return next(action);
     case FETCH_CATEGORY:
       const categorySuccess = category => dispatch(receiveCategory(category));
-      fetchCategory(action.name, categorySuccess, fetchError);
+      fetchCategory(action.name, categorySuccess);
       return next(action);
     default:
       return next(action);

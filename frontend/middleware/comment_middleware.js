@@ -13,19 +13,18 @@ import {
 } from '../actions/comment_actions';
 
 const CommentMiddleware = ({ dispatch }) => next => action => {
-  const apiCallError = err => console.log(err.responseJSON);
   const commentsSuccess = comments => dispatch(receiveComments(comments));
   const commentSuccess = comment => dispatch(receiveComment(comment));
 
   switch(action.type) {
     case FETCH_COMMENTS:
-      fetchComments(action.movieNightId, commentsSuccess, apiCallError);
+      fetchComments(action.movieNightId, commentsSuccess);
       return next(action);
     case FETCH_COMMENT:
-      fetchComment(action.id, commentSuccess, apiCallError);
+      fetchComment(action.id, commentSuccess);
       return next(action);
     case CREATE_COMMENT:
-      createComment(action.comment, commentSuccess, apiCallError);
+      createComment(action.comment, commentSuccess);
       return next(action);
     default:
       return next(action);

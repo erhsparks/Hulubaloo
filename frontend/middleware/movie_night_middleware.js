@@ -14,20 +14,19 @@ import {
 } from '../actions/movie_night_actions';
 
 const MovieNightMiddleware = ({ dispatch }) => next => action => {
-  const apiCallError = err => console.log(err.responseJSON);
   const movieNightsFetchSuccess = movieNights => dispatch(receiveMovieNights(movieNights));
   const movieNightFetchSuccess = movieNight => dispatch(receiveMovieNight(movieNight));
   const movieNightCreateSuccess = movieNight => dispatch(addMovieNight(movieNight));
 
   switch(action.type) {
     case FETCH_MOVIE_NIGHTS:
-      fetchMovieNights(movieNightsFetchSuccess, apiCallError);
+      fetchMovieNights(movieNightsFetchSuccess);
       return next(action);
     case FETCH_MOVIE_NIGHT:
-      fetchMovieNight(action.id, movieNightFetchSuccess, apiCallError);
+      fetchMovieNight(action.id, movieNightFetchSuccess);
       return next(action);
     case CREATE_MOVIE_NIGHT:
-      createMovieNight(action.movieNight, movieNightCreateSuccess, apiCallError);
+      createMovieNight(action.movieNight, movieNightCreateSuccess);
       return next(action);
     default:
       return next(action);
