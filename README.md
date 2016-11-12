@@ -33,7 +33,7 @@ The Hulu main page!
 
 ![IMAGE OF FEATURED CATEGORIES] (docs/snaps/main_page_logged_out_scrolled.png)
 
-Tiles of the first four (see Additional Features below for discussion of future 'top/most watched') videos in each category, with links in the category title and to the right of the tiles which take the user to the full category view.
+Tiles of the first four (see Additional Features below for discussion of future 'top/most watched') videos in each category, with links in the category title and to the right of the tiles which take the user to the full category view. Mousing over a video image tile, causes a play button to fade in over it, to encourage users to understand that it is a direct link to a video view.
 
 ![IMAGE OF HIGHLIGHTED CATEGORY] (docs/snaps/main_page_logged_out_scrolled_highlighted.png)
 
