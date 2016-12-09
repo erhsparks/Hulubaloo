@@ -7,12 +7,19 @@ const headerHandler = () => {
     toggleHeaderBkg();
     shiftLeftMargin();
   };
+
+  window.onresize = () => {
+    toggleHeaderBkg();
+    shiftLeftMargin();
+  };
+  // this is super repetitive and I'd like to make it not...
 };
 
 const watchForNewComponents = () => {
   let observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
       document.body.scrollTop = 0;
+      document.body.scrollLeft = 0;
       toggleHeaderBkg();
     });
   });
@@ -62,10 +69,8 @@ const findOnOffs = (header, masthead) => {
 
 const shiftLeftMargin = () => {
   let leftOffset = document.body.scrollLeft;
-  if (leftOffset) {
-    let header = document.getElementsByClassName('global-header')[0];
-    header.style.marginLeft = `-${leftOffset}px`;
-  }
+  let header = document.getElementsByClassName('global-header')[0];
+  header.style.marginLeft = `-${leftOffset}px`;
 };
 
 export default headerHandler;
