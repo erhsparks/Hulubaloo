@@ -47,10 +47,6 @@
   color: #66AA33;
 }
 
-.top-level-comment {
-  .margin-left: 10px;
-}
-
 .top-level-comment .comment-head * {
   margin-right: 6px;
 }
