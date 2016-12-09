@@ -2,7 +2,11 @@ const headerHandler = () => {
   toggleHeaderBkg();
 
   watchForNewComponents();
-  window.onscroll = () => toggleHeaderBkg();
+
+  window.onscroll = () => {
+    toggleHeaderBkg();
+    shiftLeftMargin();
+  };
 };
 
 const watchForNewComponents = () => {
@@ -20,7 +24,7 @@ const watchForNewComponents = () => {
 };
 
 const toggleHeaderBkg = () => {
-  let header = document.getElementsByTagName('header')[0];
+  let header = document.getElementsByClassName('global-header')[0];
   let masthead = document.getElementsByClassName('masthead')[0];
 
   if (masthead) {
@@ -54,6 +58,14 @@ const findOnOffs = (header, masthead) => {
   }
 
   return toggles;
+};
+
+const shiftLeftMargin = () => {
+  let leftOffset = document.body.scrollLeft;
+  if (leftOffset) {
+    let header = document.getElementsByClassName('global-header')[0];
+    header.style.marginLeft = `-${leftOffset}px`;
+  }
 };
 
 export default headerHandler;
