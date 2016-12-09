@@ -33,7 +33,7 @@ The Hulu main page!
 
 ![IMAGE OF FEATURED CATEGORIES] (docs/snaps/main_page_logged_out_scrolled.png)
 
-Tiles of the first four (see Additional Features below for discussion of future 'top/most watched') videos in each category, with links in the category title and to the right of the tiles which take the user to the full category view.
+Tiles of the first four (see Additional Features below for discussion of future 'top/most watched') videos in each category, with links in the category title and to the right of the tiles which take the user to the full category view. Mousing over a video image tile, causes a play button to fade in over it, to encourage users to understand that it is a direct link to a video view.
 
 ![IMAGE OF HIGHLIGHTED CATEGORY] (docs/snaps/main_page_logged_out_scrolled_highlighted.png)
 
@@ -131,7 +131,7 @@ Additional features to implement.
 
 ![IMAGE OF COMMENT MOUSEOVER] (docs/snaps/comment_mouseover.png)
 
-You may notice that mousing over a comment highlights it link green. You may also note that comment post time is displayed in time since movie night start. In future, I plan to tie the comment post time to the video timestamps, so that after the movie night has ended (`active: true`), clicking a comment will take you to that point in the video. This requires more access to Vimeo's video controls than their basic API allows, but their developer API will.
+You may notice that mousing over a comment highlights it link green. You may also have noticed that comment post time is displayed in time since movie night start. In future, I plan to tie the comment post time to the video timestamps, so that after the movie night has ended (`active: false`), clicking a comment will take you to that point in the video. This requires more access to Vimeo's video controls than their basic API allows, but their developer API will.
 
 ### Watchlist
 
