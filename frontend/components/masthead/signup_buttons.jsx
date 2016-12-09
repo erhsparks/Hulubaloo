@@ -15,7 +15,7 @@ const SignupButtons = ({ currentUser }) => {
           displayType={'button'} />
       </div>
     );
-  } else return (<div></div>);
+  } else return (<div className='masthead-buttons'></div>);
 };
 
 export default SignupButtons;
