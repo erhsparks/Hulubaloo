@@ -11,9 +11,8 @@
 }
 
 .masthead-text {
-  align-self: flex-start;
+  align-self: center;
   position: absolute;
-  margin-top: 13.5%;
   width: 100%;
   max-width: 1600px;
   font-weight: bold;
