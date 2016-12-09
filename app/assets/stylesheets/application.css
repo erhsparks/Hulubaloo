@@ -51,4 +51,6 @@ a:not(.fake-button):hover * {
 .hulubaloo-logo {
   width: 135px;
   height: 25px;
+  background-image: url('/assets/logo.png');
+  background-size: cover;
 }
