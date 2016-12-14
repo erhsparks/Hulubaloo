@@ -5,11 +5,14 @@ import NewMovieNightButtonContainer from '../movie_nights/new/new_movie_night_bu
 const VideoDetail = ({ video, currentUser, movieNight }) => {
   let Video;
 
+  let videoClass = 'video-in-mast';
+  if (!movieNight) videoClass += ' min-width';
+
   if (currentUser) {
-    Video = <iframe className='video-in-mast'
+    Video = <iframe className={videoClass}
       src={video.video_url} />;
   } else {
-    Video = <section className='video-in-mast'>
+    Video = <section className={videoClass}>
       <section className='logged-out-roadblock'>
         <h1>
           Hi there! Start watching {video.title} with a free Hulubaloo account.
