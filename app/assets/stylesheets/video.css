@@ -66,12 +66,18 @@
   padding-bottom: 2%;
 }
 
-.video-info-text {
+.right-side-container {
   display: flex;
   flex-direction: column;
   color: #AAAAAA;
   margin-left: 4%;
   width: 55%;
+  justify-content: space-between;
+}
+
+.video-info-text {
+  display: flex;
+  flex-direction: column;
 }
 
 .not-fixed {
@@ -93,6 +99,18 @@
   margin-top: 10px;
 }
 
-.video-info-text p {
+.video-info-text p,
+.create-movie-night p {
   font-size: 14px;
+}
+
+.create-movie-night {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto 0;
+}
+
+.create-movie-night p {
+  padding-top: 12px;
 }

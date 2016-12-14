@@ -36,15 +36,17 @@ const VideoDetail = ({ video, currentUser }) => {
           src={video.preview_image_url}
           alt={`Poster for ${video.title}`} />
 
-        <section className='video-info-text'>
-          <h1>{video.title}</h1>
-          <div className='separator' />
-          <p>
-            {video.description}
-            <br />
-            <br />
-            {`For copyright reasons, this is not actually ${video.title}.`}
-          </p>
+        <section className='right-side-container'>
+          <section className='video-info-text'>
+            <h1>{video.title}</h1>
+            <div className='separator' />
+            <p>
+              {video.description}
+              <br />
+              <br />
+              {`For copyright reasons, this is not actually ${video.title}.`}
+            </p>
+          </section>
 
           <NewMovieNightButtonContainer />
         </section>
