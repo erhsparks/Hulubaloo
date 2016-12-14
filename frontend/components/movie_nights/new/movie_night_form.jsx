@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class MovieNightForm extends React.Component {
   constructor (props) {
@@ -16,7 +17,10 @@ class MovieNightForm extends React.Component {
     // TODO: make a users index route
 
     return (
-      <div>Placeholder</div>
+      <div className='placeholder-text'>
+        <p>{'Coming soon! For now, check out the'}</p>
+        <Link to='/movie-nights'>example movie nights</Link>
+      </div>
     );
   }
 }

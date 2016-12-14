@@ -1,0 +1,11 @@
+.placeholder-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+}
+
+.placeholder-text a {
+  text-decoration: underline;
+}
