@@ -2,7 +2,7 @@ import React from 'react';
 import RoadblockButtonsContainer from './roadblock_buttons_container';
 import NewMovieNightButtonContainer from '../movie_nights/new/new_movie_night_button_container';
 
-const VideoDetail = ({ video, currentUser }) => {
+const VideoDetail = ({ video, currentUser, movieNight }) => {
   let Video;
 
   if (currentUser) {
@@ -48,7 +48,7 @@ const VideoDetail = ({ video, currentUser }) => {
             </p>
           </section>
 
-          <NewMovieNightButtonContainer />
+          <NewMovieNightButtonContainer movieNight={movieNight}/>
         </section>
       </section>
     </content>

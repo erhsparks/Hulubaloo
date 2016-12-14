@@ -17,7 +17,7 @@ class MovieNight extends React.Component {
   render () {
     return (
       <div className='movie-night'>
-        <VideoDetailContainer />
+        <VideoDetailContainer movieNight={true}/>
         <CommentsContainer />
       </div>
     );

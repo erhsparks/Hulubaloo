@@ -1,8 +1,8 @@
 import React from 'react';
 import NewMovieNightModal from './new_movie_night_modal';
 
-const NewMovieNightButton = ({ currentUser }) => {
-  if (currentUser) {
+const NewMovieNightButton = ({ currentUser, movieNight }) => {
+  if (currentUser && !movieNight) {
     return (
       <aside className='create-movie-night'>
         <p>
