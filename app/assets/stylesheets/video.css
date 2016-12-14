@@ -106,11 +106,16 @@
 
 .create-movie-night {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  margin: auto 0;
+  margin: auto 0px 0px auto;
 }
 
 .create-movie-night p {
   padding-top: 12px;
+}
+
+.create-movie-night .fake-button {
+  margin-top: 10px;
+  padding: 0px 10px;
 }
