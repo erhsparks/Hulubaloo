@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
 import SessionModalContainer from '../session/session_modal_container';
 
 const RoadblockButtons = ({ currentUser }) => {
@@ -15,7 +14,7 @@ const RoadblockButtons = ({ currentUser }) => {
           displayType={'button'} />
 
         <p className='or-login-blurb'>
-          Already have an account?
+          {`Already have an account?`}
 
           <SessionModalContainer displayText={'Log In'}
             formType={'Log In'}

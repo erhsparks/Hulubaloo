@@ -1,5 +1,6 @@
 import React from 'react';
 import RoadblockButtonsContainer from './roadblock_buttons_container';
+import NewMovieNightButtonContainer from '../movie_nights/new/new_movie_night_button_container';
 
 const VideoDetail = ({ video, currentUser }) => {
   let Video;
@@ -44,6 +45,8 @@ const VideoDetail = ({ video, currentUser }) => {
             <br />
             {`For copyright reasons, this is not actually ${video.title}.`}
           </p>
+
+          <NewMovieNightButtonContainer />
         </section>
       </section>
     </content>
