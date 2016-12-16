@@ -7,8 +7,6 @@ const Home = () => (
     <MastheadContainer />
 
     <FeaturedCategoriesContainer />
-
-    <nav className='video-categories'/>
   </div>
 );
 
