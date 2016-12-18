@@ -11,7 +11,7 @@ export const Disclaimer = () => (
     <content className='footer-link-page'>
       <h1>Disclaimer</h1>
 
-      <p>This website is not intended for commercial use. [Copyrighted content use to go here]</p>
+      <p>{'This website is not intended for commercial use. No money is being made from any copyrighted content displayed on this page, and no copyright infringement is intended.'}</p>
     </content>
   </div>
 );
