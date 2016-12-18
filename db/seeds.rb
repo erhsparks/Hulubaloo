@@ -131,6 +131,9 @@ movies.each do |title, info|
   end
 end
 
+mn0 = MovieNight.create(host_id: 3, video_id: 6, date_and_time: DateTime.new(2016, 10, 31, 17, 15, 0, '-8'))
+mn0.participants << me << guest
+
 mn1_start = DateTime.new(2016, 11, 11, 13, 0, 0, '-8')
 mn1 = MovieNight.create(host_id: 1, video_id: 1, date_and_time: mn1_start)
 mn1.participants << me << u1

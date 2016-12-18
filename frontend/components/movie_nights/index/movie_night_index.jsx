@@ -40,7 +40,7 @@ const MovieNightIndex = ({ movieNights, currentUser }) => {
           <section className='mn-index-section page-width'>
 
           <ul>
-            {movieNights.upcoming.map((movieNight, i) => (
+            {movieNights.upcoming.reverse().map((movieNight, i) => (
               makeEntry(movieNight, i)
             ))}
           </ul>
@@ -54,7 +54,7 @@ const MovieNightIndex = ({ movieNights, currentUser }) => {
           <section className='mn-index-section page-width'>
 
           <ul>
-            {movieNights.past.map((movieNight, i) => (
+            {movieNights.past.reverse().map((movieNight, i) => (
               makeEntry(movieNight,i)
             ))}
           </ul>
