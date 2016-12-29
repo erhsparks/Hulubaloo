@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { MailtoLink } from './mailto_link';
 
 export const TermsLink = () => (
   <li><Link to={'/terms'}>Terms of Use</Link></li>
@@ -11,7 +12,7 @@ export const Terms = () => (
     <content className='footer-link-page'>
       <h1>Terms of Use</h1>
 
-      <p>...</p>
+      <p>Have fun! <MailtoLink linkText="Send me an email" /> if you spot a bug!</p>
     </content>
   </div>
 );

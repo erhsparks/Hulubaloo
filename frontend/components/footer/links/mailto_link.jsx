@@ -9,9 +9,6 @@ export const MailtoLink = ({ linkText }) => (
 
 export const MailtoLinkLi = () => (
   <li>
-    <a target="_blank"
-       href='mailto:erhsparks@gmail.com?&amp;subject=Hulubaloo&amp;body=I%20found%20your%20Hulubaloo%20site%20and...'>
-       Contact
-    </a>
+    <MailtoLink linkText="Contact" />
   </li>
 );
