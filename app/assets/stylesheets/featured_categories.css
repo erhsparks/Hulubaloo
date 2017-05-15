@@ -39,6 +39,12 @@
   flex-direction: row;
   justify-content: space-between;
 }
+/*
+.featured-categories-videos-container > h1 {
+  position: absolute;
+  right: 0;
+  margin-top: 110px;
+}*/
 
 .featured-categories-videos {
   width: 93%;
@@ -46,8 +52,13 @@
   flex-direction: row;
   justify-content: space-between;
 }
+/*
+.featured-categories-videos a {
+  width: 25%;
+}*/
 
 .featured-video {
+  /*min-width: 196px;*/
   width: 220px;
   height: 318px;
   border: 2px solid #FFF;

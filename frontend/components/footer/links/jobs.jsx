@@ -13,7 +13,7 @@ export const Jobs = () => (
         <h1>Jobs</h1>
 
         <p>
-          <MailtoLink linkText={'Hire me!'} />
+          lol jk
         </p>
     </content>
   </div>

@@ -12,7 +12,7 @@ export const Terms = () => (
     <content className='footer-link-page'>
       <h1>Terms of Use</h1>
 
-      <p>Have fun! <MailtoLink linkText="Send me an email" /> if you spot a bug!</p>
+      <p>Have fun!</p>
     </content>
   </div>
 );

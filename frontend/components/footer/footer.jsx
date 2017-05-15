@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { AboutLink } from './links/about';
-import { MailtoLinkLi } from './links/mailto_link';
 import { JobsLink } from './links/jobs';
 import { MyGithub, HulubalooGithub } from './links/github_links';
 import { DisclaimerLink } from './links/disclaimer';
@@ -13,7 +12,6 @@ export default () => (
     <nav className='footer-nav page-width'>
       <ul className='footer-ul'>
         <AboutLink />
-        <MailtoLinkLi />
         <JobsLink />
         <MyGithub />
         <HulubalooGithub />
