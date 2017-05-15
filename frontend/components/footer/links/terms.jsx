@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { MailtoLink } from './mailto_link';
 
 export const TermsLink = () => (
   <li><Link to={'/terms'}>Terms of Use</Link></li>

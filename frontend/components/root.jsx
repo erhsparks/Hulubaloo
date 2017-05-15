@@ -33,7 +33,6 @@ import VideoDetailContainer from './videos/video_detail_container';
 import MovieNightIndexContainer from './movie_nights/index/movie_night_index_container';
 import MovieNightContainer from './movie_nights/watch/movie_night_container';
 import { About } from './footer/links/about';
-import { Jobs } from './footer/links/jobs';
 import { Disclaimer } from './footer/links/disclaimer';
 import { Terms } from './footer/links/terms';
 import { Privacy } from './footer/links/privacy';
@@ -90,7 +89,6 @@ const Root = ({ store }) => {
             component={MovieNightContainer} onEnter={loadMovieNightAndComments} />
 
           <Route path='about' component={About} />
-          <Route path='jobs' component={Jobs} />
           <Route path='disclaimer' component={Disclaimer} />
           <Route path='terms' component={Terms} />
           <Route path='privacy' component={Privacy} />
